@@ -7,9 +7,14 @@
 
 
 body {
-        font-family: 'Merriweather', serif;
-        background-color: #b1cddc;
-    }
+    font-family: 'Merriweather', serif;
+    /*background-color: #a2c3c3;*/
+    background-color: #b1cddc;
+}
+
+ul.normal {
+	font-size: 1.22em
+}
 
 p.normal {
     font-size: 1.22em;
@@ -20,7 +25,7 @@ p.lead {
 }
 
 .row-centered {
-text-align:center;
+		text-align:center;
 }
 
 .col-centered {
