@@ -8,6 +8,8 @@
 
 body {
     font-family: 'Merriweather', serif;
+    font-weight: 220;
+    line-height: 2.70em;
     /*background-color: #a2c3c3;*/
     background-color: #b1cddc;
 }
@@ -18,7 +20,16 @@ ul.normal {
 
 p.normal {
     font-size: 1.22em;
+    /*font-weight: 200;*/
 }
+
+
+p.indented {
+    font-size: 1.22em;
+    text-indent: 30px;
+    /*font-weight: 200;*/
+}
+
 
 p.lead {
     font-size: 1.67em;
