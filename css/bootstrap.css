@@ -132,6 +132,7 @@ textarea {
   margin: 0;
   font: inherit;
   color: inherit;
+  background-color: #a2c3c3;
 }
 button {
   overflow: visible;
@@ -1102,7 +1103,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-color: #a2c3c3;
 }
 input,
 button,
