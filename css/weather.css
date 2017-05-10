@@ -1,0 +1,55 @@
+#header-box {
+	text-align: center;
+}
+
+#conditions {
+	text-align: center;
+}
+
+.forecast {
+	
+}
+
+.forecast-day {
+	border: 1px solid gray;
+  width: 250px;
+  height: 100%;
+
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+
+  text-shadow: black 0px 0px 10px;
+
+}
+
+.sunny-day {
+	background-image: url("http://i.imgur.com/bYtaCHw.jpg");
+  color: white;
+  background-size: 250px auto;
+
+}
+
+.rainy-day {
+	background-image: url("http://i.imgur.com/mVbmFQp.jpg");
+  color: white;
+  background-size: 250px auto;
+
+}
+
+.cloudy-day {
+	background-image: url("http://i.imgur.com/nXPDuY4.jpg");
+  color: white;
+  background-size: 250px auto;
+
+}
+
+.windy-day {
+	background-image: url("http://i.imgur.com/rhh66Kb.jpg");
+  color: white;
+  background-size: 250px auto;
+
+}
+
+
+

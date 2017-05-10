@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Yahoo Weather API Interface</title>
+	<link rel="stylesheet" href="/css/weather.css">
+</head>
+
+<body>
+
+	<div id="app">
+		<div id="header-box">
+			<h1>Yahoo Weather</h1>
+			<input type="text" v-model="input_location" placeholder="Enter a location"></input>
+			<button v-on:click="getWeather()">Find weather</button>
+		</div>
+		
+		<div v-if="weatherLoaded">
+			<!-- {{ weather["query"]["results"]["channel"]["item"]["forecast"] }} -->
+
+			<!-- ^^ This will break the page if it tries to call a method on weather and weather is undefined. In 
+			other words, when this object hasnt loaded yet and you still try to call the method on it. so there are 2 solutions: we have to either 1. put it inside an "if" statement that only calls {{weather["query"]["results"]...}} after 'weather' has been defined inside weather.js, or 2. make sure that we define 'weather' immediately when the page loads, with some set location. -->
+
+			<div id="conditions">
+				<h2>{{ weatherItem.title }}:</h2>
+				<h3>
+					({{ today.date }})<br/>
+					{{ today.temp }} &deg;<br />
+					{{ today.text }} <br />
+				</h3>
+			</div>
+
+			<br/><br/>
+
+			<div id="forecast">
+				<div class="forecast-day" v-for="day in forecast" v-bind:class="getDayBackground(day)">
+					<h3>{{ day.day }}, {{ day.date }}</h3>
+					<h2>{{ day.low }} &deg; / {{ day.high }} &deg;
+					<h3>{{ day.text }}</h3>
+				</div>
+			</div>
+
+		</div>
+
+		
+
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="/js/vue.js"></script> <!-- This tag includes Vue.js in the HTML file. -->
+	<script src="/js/weather.js"></script>
+	
+
+</body>
+</html>
