@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="calculator.css">
+</head>
+
+<body>
+
+	<div class="header-box">
+		<h1>Vue.js Calculator</h1>
+	</div>
+
+	<div id="app">
+		<div class="alignment">
+			<div class="calculator">
+				<!-- <div id="block"> -->
+					<input id="expression" v-model="expression"></input>
+				<!-- </div> -->
+
+
+				<button v-for="button in buttons" id="block" v-on:click="enterSymbol(button)">{{ button }}</button>
+
+			</div>
+		</div>
+	</div>
+
+
+	<script src="vue.js"></script> <!-- This tag includes Vue.js in the HTML file. -->
+	<script src="calculator.js"></script>
+	
+
+</body>
+</html>
+
