@@ -1,12 +1,14 @@
 .header-container {
 	height: 170px;
-	/*padding-bottom: 20px;*/
+	padding-top: 10px;
 }
 
 .image-block {
 	display: inline-block;
+	vertical-align: middle;
 	width: 140px;
-	margin-right: 40px;
+	margin-right: 25px;
+	margin-left: 20px;
 	/*padding-bottom: 20px;*/
 }
 
@@ -15,7 +17,14 @@
 	width:9.7em;
 }
 
-.header-block {
+.header-index-block {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.header-standard-block {
+	margin-left: 8px;
+	/*text-align: right;*/
 	display: inline-block;
 	vertical-align: middle;
 }
