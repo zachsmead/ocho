@@ -29,14 +29,13 @@
 
 .portrait {
 	border-radius: 50%;
-	width:108px;
+	height:108px;
 }
 
-.portrait:hover {
-	content: url('../images/chibi2_crop.png');
-  /*content: url('http://www.furrytalk.com/wp-content/uploads/2010/05/2.jpg');*/
+.portrait-1:hover {
+	content: url('../images/chibi3_crop.png');
 	border-radius: 50%;
-	width:103px;
+	height:108px;
 }
 
 .header-index-block {
