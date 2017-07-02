@@ -1,6 +1,8 @@
 .header-container {
+	display: inline-block;
 	height: 170px;
 	padding-top: 10px;
+	/*text-align: center;*/
 }
 
 .image-block {
@@ -31,10 +33,17 @@
 
 .text-content {
 	padding-top: 10px;
+	display: inline-block;
 }
 
 .portfolio-list {
 	padding-left: 25px;
+}
+
+.col-md-8 {
+	/*margin-left: 10%;
+	margin-right: 10%;*/
+	/*margin: 0 auto;*/
 }
 
 body {
