@@ -19,14 +19,14 @@
 	display: inline-block;
 	vertical-align: middle;
 	width: 140px;
-	margin-right: 25px;
+	margin-right: 0px;
 	margin-left: 20px;
 	/*padding-bottom: 20px;*/
 }
 
 .portrait {
-	border-radius: 50%; 
-	width:9.7em;
+	border-radius: 45%; 
+	width:7.7em;
 }
 
 .header-index-block {
@@ -36,7 +36,7 @@
 
 .header-standard-block {
 	/*margin-left: 8px;*/
-	/*text-align: right;*/
+	/*text-align: center;*/
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -59,4 +59,5 @@
 body {
 	font-family: 'Merriweather', serif;
 	line-height: 2.5em;
+	/*background-color: #e7e7e7;*/
 }
