@@ -1,3 +1,34 @@
+.header-container {
+	height: 170px;
+	/*padding-bottom: 20px;*/
+}
+
+.image-block {
+	display: inline-block;
+	width: 140px;
+	margin-right: 40px;
+	/*padding-bottom: 20px;*/
+}
+
+.portrait {
+	border-radius: 50%; 
+	width:9.7em;
+}
+
+.header-block {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.text-content {
+	padding-top: 10px;
+}
+
+.portfolio-list {
+	padding-left: 25px;
+}
+
 body {
 	font-family: 'Merriweather', serif;
+	line-height: 2.5em;
 }
