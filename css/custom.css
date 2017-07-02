@@ -41,6 +41,11 @@
 	vertical-align: middle;
 }
 
+.subheader {
+	font-size: 1.45em;
+	font-weight: 100;
+}
+
 .text-content {
 	padding-top: 10px;
 	display: inline-block;
@@ -59,5 +64,7 @@
 body {
 	font-family: 'Merriweather', serif;
 	line-height: 2.5em;
+	-webkit-transition-delay: 0.2s; /* Safari */
+  transition-delay: 0.2s;
 	/*background-color: #e7e7e7;*/
 }
