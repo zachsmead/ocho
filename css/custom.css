@@ -33,7 +33,7 @@
 }
 
 .portrait-1:hover {
-	content: url('../images/chibi3_crop.png');
+	/*content: url('../images/chibi3_crop.png');*/
 	border-radius: 50%;
 	height:108px;
 }
