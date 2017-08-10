@@ -55,7 +55,6 @@ center {
 }
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-	text-shadow: 0px 0px 1px #333;
   background-color: #d0dae8;
 }
 .navbar-inverse .navbar-toggle .icon-bar {
@@ -69,6 +68,7 @@ center {
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
   color: #333;
+  text-shadow: 0px 0px 1px #333;
   background-color: #080808;
 }
 
@@ -165,6 +165,10 @@ center {
 	/*margin-left: 10%;
 	margin-right: 10%;*/
 	/*margin: 0 auto;*/
+}
+
+.col-md-offset-4 {
+	margin-left: 380px;
 }
 
 body {
