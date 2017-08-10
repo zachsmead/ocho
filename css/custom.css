@@ -66,6 +66,8 @@
 .portfolio-header {
 	text-align: center;
 	font-size: 1.5em;
+	padding: 10px;
+	margin-bottom: 10px;
 }
 
 .portfolio-list {
