@@ -70,8 +70,15 @@
 	margin-bottom: 10px;
 }
 
+.portfolio-item-description {
+	font-size: 1.25em;
+	margin-left: 40px;
+}
+
 .portfolio-list {
-	/*padding-left: 25px;*/
+	/*font-size: 1.25em;*/
+	/*margin-left: 100px;*/
+	/*padding-left: 100px;*/
 }
 
 .contact-info {
