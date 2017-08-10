@@ -74,6 +74,22 @@
 	/*padding-left: 25px;*/
 }
 
+.contact-info {
+	text-align: center;
+}
+
+.contact-list {
+	display: flex;
+	justify-content: center;
+  align-items: center;
+}
+
+.contact-list-site {
+	font-size: 1.2em;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
 .col-md-8 {
 	/*margin-left: 10%;
 	margin-right: 10%;*/
