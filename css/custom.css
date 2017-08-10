@@ -135,12 +135,12 @@ center {
 }
 
 .portfolio-item-description {
-	font-size: 1.25em;
+	font-size: 1.22em;
 	margin-left: 40px;
 }
 
 .portfolio-list {
-	/*font-size: 1.25em;*/
+	/*font-size: 1.22em;*/
 	/*margin-left: 100px;*/
 	/*padding-left: 100px;*/
 }
@@ -161,14 +161,19 @@ center {
 	margin-right: 10px;
 }
 
+.container {
+	/*margin-left: 10px;*/
+	/*margin-right: 10px;*/
+}
+
+.col-sm-4 {
+	padding-right: 3.7%;
+}
+
 .col-md-8 {
 	/*margin-left: 10%;
 	margin-right: 10%;*/
 	/*margin: 0 auto;*/
-}
-
-.col-md-offset-4 {
-	margin-left: 380px;
 }
 
 body {
