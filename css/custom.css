@@ -83,23 +83,24 @@ center {
 .image-block {
 	display: inline-block;
 	vertical-align: middle;
-	width: 140px;
+	/* width: 140px; */
 	margin-right: 0px;
 	margin-left: 0px;
 	position:relative;
-  /*float: right;*/
+  /* float: right; */
 	padding-bottom: 0px;
 }
 
 .portrait {
 	border-radius: 50%;
-	height:108px;
+	height:140px;
+	/* height:108px; */
 }
 
 .portrait-1:hover {
-	/*content: url('../images/chibi3_crop.png');*/
 	border-radius: 50%;
-	height:108px;
+	height:140px;
+	/* height:108px; */
 }
 
 .header-index-block {
