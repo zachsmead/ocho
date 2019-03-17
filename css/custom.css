@@ -81,26 +81,27 @@ center {
 }
 
 .image-block {
-	display: inline-block;
+	/* display: inline-block; */
+	display: block;
 	vertical-align: middle;
-	/* width: 140px; */
-	margin-right: 0px;
-	margin-left: 0px;
+	margin-left: auto;
+	margin-right: auto;
 	position:relative;
-  /* float: right; */
 	padding-bottom: 0px;
 }
 
 .portrait {
-	/* border-radius: 50%; */
-	height:250px;
-	/* height:108px; */
+	width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .portrait-1:hover {
-	/* border-radius: 50%; */
-	height:250px;
-	/* height:108px; */
+	width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .header-index-block {
