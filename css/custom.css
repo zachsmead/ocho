@@ -180,7 +180,7 @@ center {
 }
 
 body {
-	font-family: 'Ubuntu Mono', monospace;
+	font-family: 'Open Sans', sans-serif;
 	line-height: 2.5em;
 	-webkit-transition-delay: 0.2s; /* Safari */
   transition-delay: 0.2s;
