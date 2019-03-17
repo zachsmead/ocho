@@ -105,9 +105,9 @@ center {
 .header-index-block {
 	display: inline-block;
 	vertical-align: middle;
-	text-align: center;
+	/* text-align: center; */
 	padding-right: 33px;
-	padding-left: 33px;
+	/* padding-left: 33px; */
 }
 
 .header-standard-block {
