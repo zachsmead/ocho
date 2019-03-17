@@ -128,15 +128,18 @@ center {
 }
 
 .portfolio-header {
-	text-align: center;
+	/* text-align: center; */
 	font-size: 1.5em;
-	padding: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	margin-bottom: 10px;
 }
 
 .portfolio-item-description {
 	font-size: 1.22em;
-	margin-left: 40px;
+	padding-bottom: 20px;
+	/* margin-left: 10px; */
+	/* margin-left: 40px; */
 }
 
 .portfolio-list {
