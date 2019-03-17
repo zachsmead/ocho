@@ -20,8 +20,8 @@ center {
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: #333;
-  text-shadow: 0px 0px 1px #333;
+  color: #3399ff;
+  /* text-shadow: 0px 0px 1px #333; */
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
@@ -32,22 +32,22 @@ center {
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #333;
-  text-shadow: 0px 0px 1px #333;
+  color: #3399ff;
+  /* text-shadow: 0px 0px 1px #333; */
   background-color: transparent;
 }
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-  color: #333;
-  text-shadow: 0px 0px 1px #333;
+  color: #3399ff;
+  /* text-shadow: 0px 0px 1px #333; */
   background-color: #080808;
 }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
 .navbar-inverse .navbar-nav > .disabled > a:focus {
-  color: #333;
-  text-shadow: 0px 0px 1px #333;
+  color: #3399ff;
+  /* text-shadow: 0px 0px 1px #333; */
   background-color: transparent;
 }
 .navbar-inverse .navbar-toggle {
@@ -67,8 +67,8 @@ center {
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
-  color: #333;
-  text-shadow: 0px 0px 1px #333;
+  color: #3399ff;
+  /* text-shadow: 0px 0px 1px #333; */
   background-color: #080808;
 }
 
