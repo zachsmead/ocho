@@ -92,14 +92,14 @@ center {
 }
 
 .portrait {
-	border-radius: 50%;
-	height:140px;
+	/* border-radius: 50%; */
+	height:250px;
 	/* height:108px; */
 }
 
 .portrait-1:hover {
-	border-radius: 50%;
-	height:140px;
+	/* border-radius: 50%; */
+	height:250px;
 	/* height:108px; */
 }
 
