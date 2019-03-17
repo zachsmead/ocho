@@ -113,7 +113,7 @@ center {
 .header-standard-block {
 	/*margin-left: 8px;*/
 	/*text-align: center;*/
-	display: inline-block;
+	/* display: inline-block; */
 	vertical-align: middle;
 }
 
@@ -146,7 +146,7 @@ center {
 }
 
 .contact-info {
-	text-align: center;
+	/* text-align: center; */
 }
 
 .contact-list {
