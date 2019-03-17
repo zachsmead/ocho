@@ -1,17 +1,17 @@
 center {
-	background-color: #e8eff9;
+	background-color: #ffffff;
 }
 
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
   vertical-align: top;
-	background-color: #e8eff9;
+	background-color: #ffffff;
 }
 
 .navbar .navbar-collapse {
   text-align: center;
-	background-color: #e8eff9;
+	background-color: #ffffff;
 	/*color: #333;*/
 }
 
