@@ -178,11 +178,24 @@ center {
 	width:100%;
 }
 
+.text-content-block {
+	display:inline-block;
+	font-size:1.22em;
+}
+
 .padded-paragraph {
 	padding-bottom: 28px;
 }
-.padded-paragraph-last {
-	padding-top: 0px;
+.padded-paragraph-small {
+	padding-bottom: 5px;
+	/* font-size: 0.85em !important; */
+}
+.padded-paragraph {
+	padding-bottom: 28px;
+}
+.padded-paragraph-small-last {
+	padding-top: 15px;
+	/* font-size: 0.85em !important; */
 }
 
 .portfolio-header {
