@@ -179,8 +179,9 @@ center {
 }
 
 .text-content-block {
+	padding-top: 15px;
 	display:inline-block;
-	font-size:1.25em;
+	font-size:1.19em;
 }
 
 .padded-paragraph {
@@ -199,7 +200,7 @@ center {
 	padding-bottom: 28px;
 }
 .padded-paragraph-small-last {
-	padding-top: 25px;
+	padding-top: 15px;
 	padding-bottom: 25px;
 	font-size: 1.0em !important;
 }
