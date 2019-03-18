@@ -179,10 +179,10 @@ center {
 }
 
 .text-content-block {
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 0px;
+	padding-bottom: 6px;
 	display:inline-block;
-	font-size:1.171em;
+	font-size:1.2em;
 }
 
 .padded-paragraph {
@@ -190,19 +190,19 @@ center {
 }
 .padded-paragraph-small-first { /* font size defaults to a smaller size for some reason*/
 	/* padding-bottom: 5px; */
-	font-size: 1.171em !important;
+	font-size: 1.12em !important;
 	margin-top:10px;
 }
 .padded-paragraph-small { /* font size defaults to a smaller size for some reason*/
 	/* padding-bottom: 5px; */
-	font-size: 1.171em !important;
+	font-size: 1.03em !important;
 }
 .padded-paragraph {
 	padding-bottom: 28px;
 }
 .padded-paragraph-small-last {
 	padding-bottom: 25px;
-	font-size: 1.171em !important;
+	font-size: 1em !important;
 }
 
 .portfolio-header {
