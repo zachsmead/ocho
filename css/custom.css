@@ -156,12 +156,15 @@ center {
 .subheader {
 	font-size: 1.45em;
 	font-weight: 100;
-	color: #a2a7ad;
+	/* color: #a2a7ad; */
+	color: #00a04a;
+	/* color: #448e66; */
 }
 .index-subheader {
 	font-size: 1.45em;
 	font-weight: 100;
-	color: #a2a7ad;
+	/* color: #a2a7ad; */
+	color: #00a04a;
 	/* color: #333; */
 }
 
