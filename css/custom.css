@@ -156,6 +156,13 @@ center {
 .subheader {
 	font-size: 1.45em;
 	font-weight: 100;
+	color: #a2a7ad;
+}
+.index-subheader {
+	font-size: 1.45em;
+	font-weight: 100;
+	color: #a2a7ad;
+	/* color: #333; */
 }
 
 .text-content {
