@@ -159,15 +159,13 @@ center {
 }
 
 .text-content {
-	/* font-family: "Roboto Slab", serif; */
 	font-family: "Roboto", serif;
-	/* font-family: "PT Mono", monospace; */
-	/* font-family: "Cousine", monospace; */
 	font-weight: 100;
 	font-size: 1em;
 	line-height: 2.05;
 	padding-top: 0px;
-	display: inline-block;
+	/* display: inline-block; */
+	width:100%;
 }
 
 .padded-paragraph {
