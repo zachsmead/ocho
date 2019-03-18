@@ -180,7 +180,7 @@ center {
 
 .text-content-block {
 	display:inline-block;
-	font-size:1.08em;
+	font-size:1.25em;
 }
 
 .padded-paragraph {
@@ -188,20 +188,20 @@ center {
 }
 .padded-paragraph-small-first { /* font size defaults to a smaller size for some reason*/
 	/* padding-bottom: 5px; */
-	font-size: 1.08em !important;
+	font-size: 1.17em !important;
 	margin-top:10px;
 }
 .padded-paragraph-small { /* font size defaults to a smaller size for some reason*/
 	/* padding-bottom: 5px; */
-	font-size: 1.08em !important;
+	font-size: 1.09em !important;
 }
 .padded-paragraph {
 	padding-bottom: 28px;
 }
 .padded-paragraph-small-last {
-	/* padding-top: 15px; */
+	padding-top: 25px;
 	padding-bottom: 25px;
-	font-size: 1.08em !important;
+	font-size: 1.0em !important;
 }
 
 .portfolio-header {
