@@ -186,6 +186,11 @@ center {
 .padded-paragraph {
 	padding-bottom: 28px;
 }
+.padded-paragraph-small-first { /* font size defaults to a smaller size for some reason*/
+	/* padding-bottom: 5px; */
+	font-size: 1.08em !important;
+	margin-top:10px;
+}
 .padded-paragraph-small { /* font size defaults to a smaller size for some reason*/
 	/* padding-bottom: 5px; */
 	font-size: 1.08em !important;
@@ -195,7 +200,7 @@ center {
 }
 .padded-paragraph-small-last {
 	/* padding-top: 15px; */
-	/* padding-bottom: 65px; */
+	padding-bottom: 25px;
 	font-size: 1.08em !important;
 }
 
