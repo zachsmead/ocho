@@ -1,3 +1,8 @@
+html {
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+}
+
 center {
 	background-color: #fcfcfc;
 }
@@ -109,17 +114,18 @@ center {
 	margin-right: auto;
 	position:relative;
 	padding-bottom: 0px;
+	padding-top: 10px;
 }
 
 .portrait {
-	width: 100%;
+	width: 95%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .portrait-1:hover {
-	width: 100%;
+	width: 95%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -152,8 +158,16 @@ center {
 	/* font-family: "Cousine", monospace; */
 	font-weight: 100;
 	font-size: 1em;
-	padding-top: 10px;
+	line-height: 2.05;
+	padding-top: 0px;
 	display: inline-block;
+}
+
+.padded-paragraph {
+	padding-bottom: 28px;
+}
+.padded-paragraph-last {
+	padding-top: 0px;
 }
 
 .portfolio-header {
