@@ -72,12 +72,20 @@ center {
   background-color: #080808;
 }
 
+.navbar-current-page {
+	color: #3399ff !important;
+}
+
 .header-container {
 	display: inline-block;
 	height: 170px;
 	width: 100%;
 	padding-top: 10px;
 	/*text-align: center;*/
+}
+
+.normal-link {
+	color: #3399ff;
 }
 
 .image-block {
