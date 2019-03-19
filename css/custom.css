@@ -11,14 +11,27 @@ body {
 
 }
 
+.container {
+	display: inline-block;
+}
+.page-content-container {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.nav-buffer {
+	padding-bottom: 60px;
+}
+
+
 .nav-container {
 	overflow: hidden;
   background-color: #fcfcfc;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-	padding-top: 10px;
-	padding-bottom: 10px;
+	/* padding-top: 10px; */
+	/* padding-bottom: 10px; */
 	border-bottom: 1px solid black; */
 }
 
@@ -96,7 +109,6 @@ nav-brand:focus {
 
 .header-container {
 	display: inline-block;
-	padding-top: 100px;
 	padding-bottom: 20px;
 	width: 100%;
 	/*text-align: center;*/
