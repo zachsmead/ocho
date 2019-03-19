@@ -317,6 +317,7 @@ center {
 .container {
 	/*margin-left: 10px;*/
 	/*margin-right: 10px;*/
+	/* max-height: 100px; */
 }
 
 .col-sm-4 {
