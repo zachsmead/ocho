@@ -24,6 +24,7 @@ body {
 	display: inline-block;
 	padding-left: 10px;
 	padding-right: 10px;
+	text-align: center;
 }
 
 .nav-brand {
@@ -39,6 +40,7 @@ nav-brand:focus {
 }
 
 .nav-list {
+	margin: 0;
 	flex: 1;
   display: inline-block;
   float: none;
@@ -46,11 +48,7 @@ nav-brand:focus {
 	background-color: #fcfcfc;
 }
 
-.nav-list li {
-	display: inline-block;
-}
-
-.nav-list > li > a {
+.nav-list > a {
 	font-size: 1em;
   color: #333;
 	display: inline-block;
@@ -58,15 +56,30 @@ nav-brand:focus {
 	padding-right: 10px;
 }
 
-.nav-list > li > a:hover,
-.nav-list > li > a:focus {
+.nav-list a:hover,
+.nav-list a:focus,
+.nav-left a:hover,
+.nav-left a:focus,
+.nav-right a:hover,
+.nav-right a:focus {
   color: #3399ff;
-  background-color: transparent;
+	background-color: transparent;
+	text-decoration: none !important;
 }
 
-nav-right {
-	flex: 1;
-	align-items: right;
+.nav-left {
+	text-align: left;
+	color: #333;
+	padding-left: 20px;
+}
+.nav-middle {
+	text-align: center;
+	color: #333;
+}
+.nav-right, .nav-right > a {
+	text-align: right;
+	color: #333;
+	padding-right: 10px;
 }
 
 .navbar-current-page {
