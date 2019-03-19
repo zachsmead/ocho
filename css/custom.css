@@ -12,11 +12,14 @@ body {
 }
 
 .nav-container {
-	flex: 1;
+	overflow: hidden;
+  background-color: #fcfcfc;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
 	padding-top: 10px;
 	padding-bottom: 10px;
-	/* position: fixed; */
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid black; */
 }
 
 .nav-header {
@@ -78,10 +81,13 @@ nav-brand:focus {
 	text-align: center;
 	color: #333;
 }
-.nav-right, .nav-right > a {
+.nav-right {
+	text-align: right;
+	padding-right: 10px;
+}
+.nav-right > a {
 	text-align: right;
 	color: #333;
-	padding-right: 10px;
 }
 
 .navbar-current-page {
@@ -90,6 +96,7 @@ nav-brand:focus {
 
 .header-container {
 	display: inline-block;
+	padding-top: 100px;
 	padding-bottom: 20px;
 	width: 100%;
 	/*text-align: center;*/
