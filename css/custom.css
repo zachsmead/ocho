@@ -58,6 +58,7 @@ nav-brand:hover,
 nav-brand:focus {
   color: #3399ff;
   background-color: transparent;
+	text-decoration: none !important;
 }
 
 .nav-list {
@@ -77,6 +78,8 @@ nav-brand:focus {
 	padding-right: 10px;
 }
 
+.nav-header a:hover,
+.nav-header a:focus,
 .nav-list a:hover,
 .nav-list a:focus,
 .nav-left a:hover,
