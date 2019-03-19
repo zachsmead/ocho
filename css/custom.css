@@ -84,14 +84,17 @@ center {
 
 .header-container {
 	display: inline-block;
-	height: 130px;
+	height: 120px;
+	padding-bottom: 0px;
 	width: 100%;
 	padding-top: 0px;
+	margin-top: 0px;
 	/*text-align: center;*/
 }
 .header-container-about {
 	display: inline-block;
-	height: 130px;
+	height: 120px;
+	padding-bottom: 0px;
 	width: 100%;
 	/* padding-top: 10px; */
 	/*text-align: center;*/
