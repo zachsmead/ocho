@@ -23,6 +23,7 @@ h1 {
 .page-content-container {
 	padding: 20px;
 	z-index: -1;
+	overflow: hidden;
 }
 
 .nav-buffer {
