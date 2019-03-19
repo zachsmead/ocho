@@ -7,11 +7,22 @@ center {
 	background-color: #fcfcfc;
 }
 
+.navbar-header {
+	display: inline-block;
+	text-align: center;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
   vertical-align: top;
 	background-color: #fcfcfc;
+}
+
+.navbar-nav li {
+	display: inline-block;
 }
 
 .navbar .navbar-collapse {
@@ -22,6 +33,7 @@ center {
 
 .navbar-inverse .navbar-brand {
   color: #333;
+	text-align: center;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
