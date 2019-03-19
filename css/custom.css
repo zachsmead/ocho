@@ -15,8 +15,9 @@ body {
 	display: inline-block;
 }
 .page-content-container {
-	padding-left: 10px;
-	padding-right: 10px;
+	/* padding-left: 20px; */
+	/* padding-right: 20px; */
+	padding: 20px;
 }
 
 .nav-buffer {
@@ -27,6 +28,7 @@ body {
 .nav-container {
 	overflow: hidden;
   background-color: #fcfcfc;
+	opacity: 1;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
