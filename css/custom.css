@@ -36,12 +36,13 @@ h1 {
 	overflow: hidden;
   background-color: #fcfcfc;
 	opacity: 1;
-  position: fixed; /* Set the navbar to fixed position */
+  position: absolute; /* Set the navbar to absolute position */
+  /* position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
 	padding-top: 5px;
 	padding-bottom: 5px;
-	border-bottom: 1px solid black;
+	/* border-bottom: 1px solid black; */
 }
 
 .nav-header {
