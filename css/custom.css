@@ -171,7 +171,7 @@ center {
 .text-content {
 	font-family: "Roboto", serif;
 	font-weight: 100;
-	/* font-size: 1em; */
+	font-size: 1.2em;
 	line-height: 2.05;
 	padding-top: 0px;
 	/* display: inline-block; */
@@ -184,7 +184,6 @@ center {
 	margin-bottom: 0px;
 	padding-bottom: 0px;
 	display:inline-block;
-	/* font-size:1.12em; */
 }
 
 .text-content-block-small {
@@ -192,7 +191,6 @@ center {
 	padding-top: 0px;
 	padding-bottom: 3px;
 	display:inline-block;
-	/* font-size:1.12em; */
 }
 
 .padded-paragraph {
@@ -200,32 +198,29 @@ center {
 }
 .padded-paragraph-small-first { /* font size defaults to a smaller size for some reason*/
 	/* padding-bottom: 5px; */
-	/* font-size: 1.12em !important; */
 	margin-top:10px;
 }
 .padded-paragraph-small { /* font size defaults to a smaller size for some reason*/
 	padding-top: 5px;
 	margin-bottom: 5px;
-	/* font-size: 1.105em !important; */
 }
 .padded-paragraph {
 	padding-bottom: 28px;
 }
 .padded-paragraph-small-last {
 	padding-bottom: 25px;
-	/* font-size: 1.105em !important; */
 }
 
 .portfolio-header {
 	/* text-align: center; */
-	font-size: 1.5em;
+	font-size: 1.3em;
 	padding-top: 8px;
 	padding-bottom: 5px;
 	margin-bottom: 10px;
 }
 
 .portfolio-item-description {
-	font-size: 1.22em;
+	font-size: 1em;
 	padding-bottom: 20px;
 	/* margin-left: 10px; */
 	/* margin-left: 40px; */
@@ -237,8 +232,11 @@ center {
 	/*padding-left: 100px;*/
 }
 
-.portfolio-ul {
+.portfolio-ul-div {
 	padding-bottom:8px;
+}
+.portfolio-ul li {
+	padding-bottom:15px;
 }
 
 
