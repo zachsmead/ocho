@@ -84,11 +84,8 @@ center {
 
 .header-container {
 	display: inline-block;
-	height: 120px;
-	padding-bottom: 0px;
+	padding-bottom: 20px;
 	width: 100%;
-	padding-top: 0px;
-	margin-top: 0px;
 	/*text-align: center;*/
 }
 .header-container-about {
@@ -145,7 +142,7 @@ center {
 	display: inline-block;
 	vertical-align: middle;
 	/* text-align: center; */
-	padding-right: 33px;
+	/* padding-right: 33px; */
 	/* padding-left: 33px; */
 }
 
@@ -157,6 +154,7 @@ center {
 }
 
 .subheader {
+	width: 100%;
 	font-size: 1.45em;
 	font-weight: 100;
 	/* color: #a2a7ad; */
@@ -164,6 +162,8 @@ center {
 	/* color: #448e66; */
 }
 .index-subheader {
+	flex: 1;
+	/* width: 100%; */
 	font-size: 1.45em;
 	font-weight: 100;
 	/* color: #a2a7ad; */
