@@ -182,12 +182,12 @@ center {
 }
 
 .text-content-index {
-	line-height: 1.5;
+	line-height: 1.4;
 }
 .text-content-about {
   height: 0px;
   /* border: 3px solid green; */
-	line-height: 1.5;
+	line-height: 1.4;
   display: inline-block;
   vertical-align: middle;
 }
