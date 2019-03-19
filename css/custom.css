@@ -15,17 +15,19 @@ body {
 	display: inline-block;
 }
 .page-content-container {
-	/* padding-left: 20px; */
-	/* padding-right: 20px; */
 	padding: 20px;
+	z-index: -1;
 }
 
 .nav-buffer {
 	padding-bottom: 60px;
+	background-color: #fcfcfc;
+	opacity: 1;
 }
 
 
 .nav-container {
+	z-index: 2;
 	overflow: hidden;
   background-color: #fcfcfc;
 	opacity: 1;
