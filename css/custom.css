@@ -7,7 +7,9 @@ center {
 	background-color: #fcfcfc;
 }
 
-body {
+@media only screen and (max-width: 767px) { /* extra padding on mobile */
+	body {
+	}
 }
 
 h1 {
@@ -33,8 +35,14 @@ h1 {
 
 .nav-buffer {
 	padding-bottom: 80px;
+	/* margin-bottom: 80px; */
 	background-color: #fcfcfc;
 	opacity: 1;
+}
+@media only screen and (max-width: 767px) { /* navbar is fixed on desktop */
+	.nav-buffer {
+		padding-top: 20px !important;
+	}
 }
 
 @media only screen and (min-width: 768px) { /* navbar is fixed on desktop */
@@ -60,7 +68,7 @@ h1 {
 	  position: absolute; /* Set the navbar to absolute position */
 	  top: 0; /* Position the navbar at the top of the page */
 	  width: 100%; /* Full width */
-		padding-top: 5px;
+		padding-top: 20px;
 		padding-bottom: 5px;
 		/* border-bottom: 1px solid black; */
 	}
