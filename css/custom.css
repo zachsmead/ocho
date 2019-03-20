@@ -381,7 +381,7 @@ nav-brand:focus {
 }
 
 .portfolio-ul-div {
-	padding-top:3px;
+	/* padding-top:3px; */
 	padding-bottom:18px;
 }
 
@@ -395,12 +395,13 @@ nav-brand:focus {
   font-weight: bold;
   display: inline-block; /* Needed to add space between the bullet and the text */
   width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1.15em; /* Also needed for space (tweak if needed) */
-  padding-right: 1.15em; /* Also needed for space (tweak if needed) */
+  margin-left: -1.35em; /* Also needed for space (tweak if needed) */
+  padding-right: 1.35em; /* Also needed for space (tweak if needed) */
 }
 
 .portfolio-ul li {
-	padding-top:6px;
+	padding-top:5px;
+	/* padding-top:6px; */
 }
 
 
