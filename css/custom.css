@@ -94,6 +94,7 @@ h1 {
 	text-align: center;
 }
 
+
 .nav-brand {
 	display: inline-block;
 	font-weight: bold;
@@ -106,6 +107,9 @@ nav-brand:focus {
   color: #238ddb;
   background-color: transparent;
 	text-decoration: none !important;
+}
+.nav-brand-large {
+	font-size: 1em !important;
 }
 
 .nav-list {
