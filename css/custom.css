@@ -390,13 +390,14 @@ nav-brand:focus {
 }
 
 .portfolio-ul li::before {
-  content: "\25cb";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  /*content: "\25cb";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: #686868;
   font-weight: bold;
   display: inline-block; /* Needed to add space between the bullet and the text */
   width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1.35em; /* Also needed for space (tweak if needed) */
-  padding-right: 1.35em; /* Also needed for space (tweak if needed) */
+  margin-left: -1.2em; /* Also needed for space (tweak if needed) */
+  padding-right: 1.2em; /* Also needed for space (tweak if needed) */
 }
 
 .portfolio-ul li {
