@@ -41,7 +41,7 @@ h1 {
 }
 @media only screen and (max-width: 767px) { /* navbar is fixed on desktop */
 	.nav-buffer {
-		padding-top: 20px !important;
+		padding-top: 70px !important;
 	}
 }
 
@@ -68,7 +68,7 @@ h1 {
 	  position: absolute; /* Set the navbar to absolute position */
 	  top: 0; /* Position the navbar at the top of the page */
 	  width: 100%; /* Full width */
-		padding-top: 20px;
+		padding-top: 50px;
 		padding-bottom: 5px;
 		/* border-bottom: 1px solid black; */
 	}
