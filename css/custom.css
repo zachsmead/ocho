@@ -91,7 +91,8 @@ h1 {
 
 .nav-brand {
 	display: inline-block;
-	font-size: 1.125em;
+	font-weight: bold;
+	font-size: 0.9em;
   color: #333;
 	text-align: center;
 }
