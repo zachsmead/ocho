@@ -4,7 +4,7 @@ html {
 }
 
 center {
-	background-color: #fcfcfc;
+	background-color: #fffcfc;
 }
 
 @media only screen and (max-width: 767px) { /* extra padding on mobile */
@@ -41,7 +41,7 @@ h1 {
 .nav-buffer {
 	padding-bottom: 80px;
 	/* margin-bottom: 80px; */
-	background-color: #fcfcfc;
+	background-color: #fffcfc;
 	opacity: 1;
 }
 @media only screen and (max-width: 767px) { /* controls padding of content after nav */
@@ -59,7 +59,7 @@ h1 {
 	.nav-container {
 		z-index: 2;
 		overflow: hidden;
-	  background-color: #fcfcfc;
+	  background-color: #fffcfc;
 		opacity: 1;
 	  position: fixed; /* Set the navbar to fixed position */
 	  top: 0; /* Position the navbar at the top of the page */
@@ -73,7 +73,7 @@ h1 {
 	.nav-container {
 		z-index: 2;
 		overflow: hidden;
-	  background-color: #fcfcfc;
+	  background-color: #fffcfc;
 		opacity: 1;
 	  position: absolute; /* Set the navbar to absolute position */
 	  top: 0; /* Position the navbar at the top of the page */
@@ -103,7 +103,7 @@ h1 {
 }
 nav-brand:hover,
 nav-brand:focus {
-  color: #3399ff;
+  color: #238ddb;
   background-color: transparent;
 	text-decoration: none !important;
 }
@@ -114,7 +114,7 @@ nav-brand:focus {
   display: inline-block;
   float: none;
   vertical-align: top;
-	background-color: #fcfcfc;
+	background-color: #fffcfc;
 }
 
 .nav-list > a {
@@ -134,7 +134,7 @@ nav-brand:focus {
 .nav-left a:focus,
 .nav-right a:hover,
 .nav-right a:focus {
-  color: #3399ff;
+  color: #238ddb;
 	background-color: transparent;
 	text-decoration: none !important;
 }
@@ -170,7 +170,7 @@ nav-brand:focus {
 
 
 .navbar-current-page {
-	color: #3399ff !important;
+	color: #238ddb !important;
 }
 
 .header-container {
@@ -181,7 +181,7 @@ nav-brand:focus {
 }
 .header-container-about {
 	display: inline-block;
-	height: 82px;
+	height: 73px;
 	/* height: 88px; */
 	padding-bottom: 0px;
 	margin-bottom: 0px;
@@ -189,16 +189,16 @@ nav-brand:focus {
 }
 
 .normal-link {
-	color: #3399ff;
+	color: #238ddb;
 }
 .normal-link:hover {
-	color: #3399ff;
+	color: #238ddb;
 	background-size: 1px 1em;
   box-shadow:
     /* inset 0 -0.175em white, */
-		/* inset 0 -0.218em #3399ff; */
+		/* inset 0 -0.218em #238ddb; */
     inset 0 -0.100em white,
-    inset 0 -0.150em #3399ff;
+    inset 0 -0.150em #238ddb;
     /* inset 0 -0.2em #000; */
   display: inline;
 	text-decoration: none !important;
@@ -269,7 +269,7 @@ nav-brand:focus {
 	/* font-family: "Roboto", serif; */
 	/* font-family: "Open Sans", sans-serif; */
 	font-weight: 100;
-	font-size: 1.125em;
+	font-size: 1.4em;
 	line-height: 2.05;
 	padding-top: 0px;
 	/* display: inline-block; */
@@ -420,5 +420,5 @@ body {
 	line-height: 2.5em;
 	-webkit-transition-delay: 0.2s; /* Safari */
   transition-delay: 0.2s;
-	/*background-color: #e7e7e7;*/
+	/*background-color: #fffcfc;*/
 }
