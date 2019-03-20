@@ -441,7 +441,7 @@ nav-brand:focus {
 
 body {
 	font-family: 'Open Sans', sans-serif;
-	line-height: 2.5em;
+	line-height: 2.3em;
 	-webkit-transition-delay: 0.2s; /* Safari */
   transition-delay: 0.2s;
 	/*background-color: #fffcfc;*/
