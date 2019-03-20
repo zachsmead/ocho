@@ -73,7 +73,7 @@ h1 {
 	  position: absolute; /* Set the navbar to absolute position */
 	  top: 0; /* Position the navbar at the top of the page */
 	  width: 100%; /* Full width */
-		padding-top: 90px; /* controls padding of nav from top */
+		padding-top: 80px; /* controls padding of nav from top */
 		padding-bottom: 5px;
 		/* border-bottom: 1px solid black; */
 	}
