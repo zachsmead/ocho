@@ -39,9 +39,14 @@ h1 {
 	background-color: #fcfcfc;
 	opacity: 1;
 }
-@media only screen and (max-width: 767px) { /* navbar is fixed on desktop */
+@media only screen and (max-width: 767px) { /* controls padding of content after nav */
 	.nav-buffer {
-		padding-top: 70px !important;
+		padding-top: 102px !important;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.nav-buffer {
+		padding-top: 0px !important;
 	}
 }
 
@@ -68,7 +73,7 @@ h1 {
 	  position: absolute; /* Set the navbar to absolute position */
 	  top: 0; /* Position the navbar at the top of the page */
 	  width: 100%; /* Full width */
-		padding-top: 50px;
+		padding-top: 90px; /* controls padding of nav from top */
 		padding-bottom: 5px;
 		/* border-bottom: 1px solid black; */
 	}
@@ -107,7 +112,8 @@ nav-brand:focus {
 }
 
 .nav-list > a {
-	font-size: 1em;
+	font-weight: bold;
+	font-size: 0.9em;
   color: #333;
 	display: inline-block;
 	padding-left: 10px;
