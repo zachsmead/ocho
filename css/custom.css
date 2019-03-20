@@ -12,10 +12,15 @@ center {
 	}
 }
 
+body {
+	font-size: 1.3em;
+}
+
 h1 {
 	padding: 0px;
 	margin-top: 0px;
 	margin-bottom: 0px;
+	font-size: 1.8em;
 }
 
 .absolute {
@@ -176,7 +181,8 @@ nav-brand:focus {
 }
 .header-container-about {
 	display: inline-block;
-	height: 88px;
+	height: 82px;
+	/* height: 88px; */
 	padding-bottom: 0px;
 	margin-bottom: 0px;
 	width: 100%;
