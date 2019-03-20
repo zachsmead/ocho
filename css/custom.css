@@ -392,7 +392,8 @@ nav-brand:focus {
   font-weight: bold;
   display: inline-block; /* Needed to add space between the bullet and the text */
   width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1.2em; /* Also needed for space (tweak if needed) */
+  padding-right: 1.2em; /* Also needed for space (tweak if needed) */
 }
 
 .portfolio-ul li {
