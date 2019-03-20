@@ -91,7 +91,7 @@ h1 {
 
 .nav-brand {
 	display: inline-block;
-	font-size: 1.3em;
+	font-size: 1.125em;
   color: #333;
 	text-align: center;
 }
@@ -144,6 +144,7 @@ nav-brand:focus {
 	color: #333;
 }
 .nav-right {
+	font-size: 1em !important;
 	text-align: right;
 	padding-right: 10px;
 }
