@@ -37,14 +37,13 @@ h1 {
 	opacity: 1;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 768px) { /* navbar is fixed on desktop */
 	.nav-container {
 		z-index: 2;
 		overflow: hidden;
 	  background-color: #fcfcfc;
 		opacity: 1;
-	  position: absolute; /* Set the navbar to absolute position
-	  /* position: fixed; /* Set the navbar to fixed position */
+	  position: fixed; /* Set the navbar to fixed position */
 	  top: 0; /* Position the navbar at the top of the page */
 	  width: 100%; /* Full width */
 		padding-top: 5px;
@@ -52,14 +51,13 @@ h1 {
 		border-bottom: 1px solid black;
 	}
 }
-@media only screen and (min-width: 767px) {
+@media only screen and (max-width: 767px) { /* navbar is absolute on mobile */
 	.nav-container {
 		z-index: 2;
 		overflow: hidden;
 	  background-color: #fcfcfc;
 		opacity: 1;
-	  /* position: absolute; /* Set the navbar to absolute position */
-	  position: fixed; /* Set the navbar to fixed position
+	  position: absolute; /* Set the navbar to absolute position */
 	  top: 0; /* Position the navbar at the top of the page */
 	  width: 100%; /* Full width */
 		padding-top: 5px;
@@ -135,10 +133,20 @@ nav-brand:focus {
 	text-align: right;
 	padding-right: 10px;
 }
-.nav-right > a {
-	text-align: right;
-	color: #333;
-}
+/* @media only screen and (min-width: 768px) { */
+	.nav-right > a {
+		text-align: right;
+		color: #333;
+	}
+/* } */
+/* @media only screen and (max-width: 767px) { */
+	/* .nav-right > a {
+		display:none;
+		text-align: right;
+		color: #333;
+	} */
+/* } */
+
 
 .navbar-current-page {
 	color: #3399ff !important;
