@@ -381,6 +381,21 @@ nav-brand:focus {
 	padding-top:3px;
 	padding-bottom:18px;
 }
+
+.portfolio-ul {
+  list-style: none; /* Remove default bullets */
+}
+
+.portfolio-ul li::before {
+  /* font-size: 0.6em; */
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #686868;
+  font-weight: bold;
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
 .portfolio-ul li {
 	padding-top:6px;
 }
