@@ -46,7 +46,7 @@ h1 {
 }
 @media only screen and (max-width: 767px) { /* controls padding of content after nav */
 	.nav-buffer {
-		padding-top: 42px !important;
+		padding-top: 10px !important;
 	}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
