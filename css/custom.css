@@ -46,7 +46,7 @@ h1 {
 }
 @media only screen and (max-width: 767px) { /* controls padding of content after nav */
 	.nav-buffer {
-		padding-top: 102px !important;
+		padding-top: 42px !important;
 	}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -78,7 +78,7 @@ h1 {
 	  position: absolute; /* Set the navbar to absolute position */
 	  top: 0; /* Position the navbar at the top of the page */
 	  width: 100%; /* Full width */
-		padding-top: 80px; /* controls padding of nav from top */
+		padding-top: 16px; /* controls padding of nav from top */
 		padding-bottom: 5px;
 		/* border-bottom: 1px solid black; */
 	}
