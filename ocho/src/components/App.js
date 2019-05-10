@@ -1,12 +1,13 @@
 import React from 'react';
 import firebase from 'firebase/app';
 import firebaseConfig from 'config/firebaseConfig.js';
+import Input from './Input';
 
 class App extends React.Component {
   state = {
     url: '',
     short: ''
-  }
+  };
 
   componentWillMount() {
     firebase.initializeApp(firebaseConfig);
