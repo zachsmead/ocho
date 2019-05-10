@@ -27,5 +27,3 @@ firebaseConfig.js
 
 # environment variables
 .env
-
-index.js
