@@ -1,6 +1,6 @@
 import React from 'react';
 import firebase from 'firebase';
-import firebaseConfig from 'ocho/firebaseConfig.js';
+import firebaseConfig from './firebaseConfig.js';
 
 class App extends React.Component {
   componentWillMount() {
