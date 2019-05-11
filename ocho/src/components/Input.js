@@ -13,7 +13,7 @@ class Input extends React.Component {
     for (var i = 0; i < 8; i++)
         randomString += possible.charAt(Math.floor(Math.random() * possible.length));
 
-    // if the randomString doesn't already exist as a value in firebase,
+    // if the randomString doesn't already exist as a key in firebase, return it
     return randomString;
 
     // otherwise do it over again
