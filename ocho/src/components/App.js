@@ -17,9 +17,7 @@ class App extends React.Component {
   }
 
   routeChange() {
-    console.log(window.location);
     const id = window.location.pathname.slice(1);
-    console.log(id);
 
     if (id) {
       const doc = firebase.firestore().collection('urls').doc(id);
