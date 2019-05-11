@@ -1,12 +1,19 @@
 import React from 'react';
+import firebase from 'firebase/app';
 
 class Input extends React.Component {
-  state = { term: '' };
+  state = { url: '' };
 
   onFormSubmit = event => {
     event.preventDefault();
 
-    this.props.onSubmit(this.state.term);
+    this.props.onURLSubmit();
+  };
+
+  onURLSubmit = async url => {
+    // shorten the URL and save it in firebase
+
+    this.setState({ url: url }); // change this later to short
   };
 
   render() {
@@ -17,8 +24,8 @@ class Input extends React.Component {
             <input
               type="text"
               placeholder='Enter a URL'
-              value={this.props.url}
-              onChange={e => this.setState({ term: e.target.value })}
+              value={this.state.url}
+              onChange={e => this.setState({ url: e.target.value })}
             />
           </div>
         </form>
