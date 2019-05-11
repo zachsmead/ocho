@@ -2,6 +2,7 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
+
 class Input extends React.Component {
   state = {
     url: '',
