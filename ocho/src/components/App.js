@@ -30,19 +30,18 @@ class App extends React.Component {
       console.log(id);
       this.setState({ info: true });
       console.log(this.state);
-      // var info = true;
     } else {
       id = id.slice(1);
     }
 
-    if (id) {
+    if (id && !id.includes('/')) {
       const doc = firebase.firestore().collection('urls').doc(id);
       const getDoc = doc.get()
       .then(doc => {
-        if (doc.exists) { // if the doc id exists and '/info/' is not in the pathname (the URL bar), redirect.
-          if (this.state.info) {
+        if (doc.exists) { // if the doc id exists... and '/info/' is not in the pathname (the URL bar), redirect.
+          if (this.state.info) { // if info is selected, we want the doc's data to render on this page.
             this.setState({ loading: false, url: doc.data().url, link: doc.data().link });
-          } else {
+          } else { // if info is not selected, we want to redirect to the url associated with the given id.
             let newPath = doc.data().url;
             window.location = newPath;
           }
