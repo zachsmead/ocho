@@ -25,19 +25,17 @@ class App extends React.Component {
       const doc = firebase.firestore().collection('urls').doc(id);
       const getDoc = doc.get()
       .then(doc => {
-        if (doc.exists) { // if the doc already exists, get another random string
-          console.log(doc);
+        if (doc.exists) { // if the doc id exists, redirect to its url
           let newPath = doc.data().url
-          console.log(newPath);
           window.location = newPath;
-        } else {
+        } else { // if it doesn't exist, set loading = false and render normally
           this.setState({ loading: false });
         }
       })
       .catch(err => {
         console.log('Error checking document', err);
       });
-    } else {
+    } else { // if no pathname, set loading to false
       this.setState({ loading: false });
     }
   }
