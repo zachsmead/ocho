@@ -27,14 +27,14 @@ class App extends React.Component {
       id = id.slice(6);
       this.setState({ info: true });
     } else {
-      id = id.slice(1)
+      id = id.slice(1);
     }
 
     if (id) {
       const doc = firebase.firestore().collection('urls').doc(id);
       const getDoc = doc.get()
       .then(doc => {
-        if (doc.exists) { // check if the doc id exists and info not in pathname, to redirect.
+        if (doc.exists) { // check if the doc id exists and that '/info/' is not in the pathname (the URL bar), and then redirect.
           if (this.state.info) {
             this.setState({ url: doc.data().url, link: doc.data().link });
           } else {
