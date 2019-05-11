@@ -37,6 +37,8 @@ class App extends React.Component {
       .catch(err => {
         console.log('Error checking document', err);
       });
+    } else {
+      this.setState({ loading: false });
     }
   }
 
