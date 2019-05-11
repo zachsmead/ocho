@@ -68,6 +68,8 @@ class Input extends React.Component {
     ) {
       this.setState({ error: 'Invalid URL'});
     }
+
+    return this.checkProtocol(url); // return the url with protocol added, if need be
   }
 
   onFormSubmit = event => {
@@ -77,10 +79,8 @@ class Input extends React.Component {
   };
 
   onURLSubmit = async => {
-    // get url from state
-    const url = this.state.url;
-
     // validate the url
+    const url = this.validate(this.state.url);
 
     // generate the short, random id for the url
     const id = this.getRandom(); // get a random string
