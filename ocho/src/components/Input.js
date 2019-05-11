@@ -2,12 +2,14 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import { withRouter } from 'react-router-dom'
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 
 class Input extends React.Component {
   state = {
     url: '',
-    error: ''
+    error: '',
+    shortened: false
   };
 
   componentWillMount = () => {
@@ -111,7 +113,7 @@ class Input extends React.Component {
             this.onURLSubmit();
           } else {
             firebase.firestore().collection('urls').doc(id).set(item).then(res => { // doc(id) creates a doc with id equal to the short random string. .set() sets that docs attributes.
-              this.setState({ url: short, error: '' });
+              this.setState({ url: short, error: '', shortened: true });
             });
           }
         })
@@ -120,6 +122,16 @@ class Input extends React.Component {
         });
     }
   };
+
+  renderCopyButton() {
+    if (this.state.shortened) {
+      return (
+        <CopyToClipboard text={this.state.url}>
+          <text>Copy</text>
+        </CopyToClipboard>
+      );
+    }
+  }
 
   render() {
     console.log(this.state);
@@ -132,13 +144,14 @@ class Input extends React.Component {
               type="text"
               placeholder='Enter a URL'
               value={this.state.url}
-              onChange={e => this.setState({ url: e.target.value })}
+              onChange={e => this.setState({ url: e.target.value, shortened: false })}
             />
           </div>
         </form>
         <div>
           {this.state.error}
         </div>
+        {this.renderCopyButton()}
       </div>
     );
   }
