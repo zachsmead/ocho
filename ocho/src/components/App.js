@@ -54,6 +54,8 @@ class App extends React.Component {
   }
 
   renderContent() {
+    const { url, link } = this.state;
+    const data = { url, link };
     if (!this.state.loading) {
       if (this.state.info) {
         return <div><pre>{JSON.stringify(data, null, 2) }</pre></div>;
