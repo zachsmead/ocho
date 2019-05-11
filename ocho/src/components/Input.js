@@ -51,7 +51,7 @@ class Input extends React.Component {
     }
   }
 
-  validate = async url  => {
+  validate = url  => {
     console.log('url: ', url);
     // make sure the url is not too short already, nor is it from domain ocho.at
     if (
@@ -69,6 +69,8 @@ class Input extends React.Component {
       || url.startsWith('www.ocho.at')
     ) {
       this.setState({ error: 'Invalid URL'});
+    } else if (this.state.error !== '') {
+      this.setState({ error: '' });
     }
 
     return this.checkProtocol(url); // return the url with protocol added, if need be
@@ -82,7 +84,7 @@ class Input extends React.Component {
 
   onURLSubmit = async => {
     // validate the url
-    const url = this.validate(this.state.url).then(res => {
+    const url = this.validate(this.state.url);
       console.log(this.state)
       if (this.state.error === '') {
         // generate the short, random id for the url
@@ -97,8 +99,8 @@ class Input extends React.Component {
           link: short
         }
 
-        // firebase.firestore().collection('urls').doc(id).get()
-        firebase.firestore().collection('urls').doc('jJNOsUF').get()
+        const doc = firebase.firestore().collection('urls').doc(id);
+        const getDoc = doc.get()
           .then(doc => {
             if (doc.exists) { // if the doc already exists, get another random string
               this.onURLSubmit();
@@ -112,7 +114,6 @@ class Input extends React.Component {
               console.log('Error checking document', err);
           });
       }
-    });
   };
 
   render() {
