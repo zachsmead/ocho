@@ -8,9 +8,9 @@ class Input extends React.Component {
   getRandom = () => {
     const rand = Math.random(); // generate random number to determine string length
     const lengths = [
-      { length: 6, min: 0, max: 0.65 }, // setting probabilities of string lengths
-      { length: 7, min: 0.65, max: 0.95 },
-      { length: 8, min: 95, max: 1 }
+      { length: 6, min: 0, max: 0.68 }, // setting probabilities of string lengths
+      { length: 7, min: 0.68, max: 0.925 },
+      { length: 8, min: 925, max: 1 }
     ];
     const length = lengths.forEach(e => { // get string length
       if (e.min < rand && rand <= e.max) { // if rand falls in the min-max range
@@ -44,16 +44,18 @@ class Input extends React.Component {
   };
 
   onURLSubmit = async => {
+    // get url from state
     const url = this.state.url;
 
-    // generate the shortened id for the url
+    // generate the short, random id for the url
     const id = this.getRandom(); // get a random string
 
-    // generate the object with the original url to save in firestore
+    // generate an object that contains the original url
     const item = {
       url: url
     }
-    // save the shortened URL in firebase
+    
+    // in firebase, save that object under the short random id
     firebase.firestore().collection('urls').doc(id).set(item).then(res => { // doc(id) creates a doc with id equal to the word itself. .set() sets that docs attributes.
       // shorten the URL
       const short = 'ocho.at/' + id;
