@@ -6,16 +6,33 @@ import Input from './Input';
 
 class App extends React.Component {
   componentWillMount() {
-    this.routeChange();
-    firebase.initializeApp(firebaseConfig);
+    if(!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig)
+      this.routeChange();
+    }
   }
 
   routeChange() {
     console.log(window.location);
     console.log(window.location.pathname);
-    // let params = new URLSearchParams(window.location.search);
-    // let path = `newPath`;
-    // this.props.history.push(path);
+    if (window.location.pathway) {
+      const id = window.location.pathname;
+      console.log(id);
+
+      const doc = firebase.firestore().collection('urls').doc(id);
+      const getDoc = doc.get()
+      .then(doc => {
+        if (doc.exists) { // if the doc already exists, get another random string
+          let newPath = doc.data.url
+          console.log(newPath);
+          // this.props.history.push(newPath);
+        } else {
+        }
+      })
+      .catch(err => {
+        console.log('Error checking document', err);
+      });
+    }
   }
 
   render() {
