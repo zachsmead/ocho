@@ -20,8 +20,8 @@ class Input extends React.Component {
       { length: 8, min: 925, max: 1 }
     ];
     var length = 0;
-    lengths.forEach(e => { // get string length
-      if (e.min < rand && rand <= e.max) { // if rand falls in the min-max range
+    lengths.forEach(e => { // determine string length using rand
+      if (rand <= e.max) { // if rand falls in the min-max range
         length = e.length;
       }
     });
@@ -40,8 +40,6 @@ class Input extends React.Component {
     // return randomString so we can save as a key in firebase.
     console.log(randomString);
     return randomString;
-
-    // but if it already exists as a key in firebase, do this over again
   }
 
   checkProtocol = url => {
