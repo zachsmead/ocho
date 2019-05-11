@@ -51,7 +51,7 @@ class Input extends React.Component {
     }
   }
 
-  validate = url  => {
+  validate = async url  => {
     console.log('url: ', url);
     // make sure the url is not too short already, nor is it from domain ocho.at
     if (
@@ -82,36 +82,37 @@ class Input extends React.Component {
 
   onURLSubmit = async => {
     // validate the url
-    const url = this.validate(this.state.url);
+    const url = this.validate(this.state.url).then(res => {
+      console.log(this.state)
+      if (this.state.error === '') {
+        // generate the short, random id for the url
+        const id = this.getRandom(); // get a random string
 
-    if (this.state.error === '') {
-      // generate the short, random id for the url
-      const id = this.getRandom(); // get a random string
+        // make the shortened URL link
+        const short = 'ocho.at/' + id;
 
-      // make the shortened URL link
-      const short = 'ocho.at/' + id;
+        // generate an object that contains the original + shortened url
+        const item = {
+          url: url,
+          link: short
+        }
 
-      // generate an object that contains the original + shortened url
-      const item = {
-        url: url,
-        link: short
+        // firebase.firestore().collection('urls').doc(id).get()
+        firebase.firestore().collection('urls').doc('jJNOsUF').get()
+          .then(doc => {
+            if (doc.exists) { // if the doc already exists, get another random string
+              this.onURLSubmit();
+            } else {
+              firebase.firestore().collection('urls').doc(id).set(item).then(res => { // doc(id) creates a doc with id equal to the short random string. .set() sets that docs attributes.
+                this.setState({ url: short, error: '' });
+              });
+            }
+          })
+          .catch(err => {
+              console.log('Error checking document', err);
+          });
       }
-
-      firebase.firestore().collection('urls').doc(id).get()
-        .then(doc => {
-          if (doc.exists) { // if the doc already exists, get another random string
-            this.onURLSubmit();
-          } else {
-            firebase.firestore().collection('urls').doc(id).set(item).then(res => { // doc(id) creates a doc with id equal to the short random string. .set() sets that docs attributes.
-              this.setState({ url: short, error: '' });
-            });
-          }
-        })
-        .catch(err => {
-            console.log('Error checking document', err);
-        });
-    }
-
+    });
   };
 
   render() {
