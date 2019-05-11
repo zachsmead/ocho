@@ -52,7 +52,7 @@ class App extends React.Component {
       .catch(err => {
         console.log('Error checking document', err);
       });
-    } else { // if no pathname, or an invalid pathname, set loading to false
+    } else { // if no pathname, or an invalid pathname, set loading to false and render normally
       this.setState({ loading: false });
     }
   }
