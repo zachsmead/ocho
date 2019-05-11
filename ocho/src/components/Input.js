@@ -12,8 +12,9 @@ class Input extends React.Component {
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
     // there are 62 characters to choose from when generating a random string.
-    // with 8 character slots, there are 2.1834011e+14 unique combinations.
-
+    // with 6 character slots, there are 56,800,235,584 (~57 billion) unique combinations.
+    // with 7 character slots, there are 2.1834011e+14 (218,340,110,000,000) unique combinations.
+    // with 8 character slots, there are 2.1834011e+14 (218,340,110,000,000) unique combinations.
     console.log(possible.length);
 
     for (var i = 0; i < length; i++)
