@@ -21,11 +21,11 @@ class App extends React.Component {
 
   routeChange() {
     console.log(window.location);
-    var id = window.location.pathname;
+    var id = window.location.pathname; // get the stuff after the '/' in 'ocho.at/'
 
     console.log(id);
 
-    if (id && id.startsWith('/info/')) {
+    if (id && id.startsWith('/info/')) { // slice out unnecessary characters and determine if we want info about a given id
       id = id.slice(6);
       console.log(id);
       this.setState({ info: true });
@@ -52,20 +52,20 @@ class App extends React.Component {
       .catch(err => {
         console.log('Error checking document', err);
       });
-    } else { // if no pathname, set loading to false
+    } else { // if no pathname, or an invalid pathname, set loading to false
       this.setState({ loading: false });
     }
   }
 
   renderContent() {
     if (!this.state.loading) {
-      if (this.state.info) {
+      if (this.state.info) { // if info is in the URL bar, render a json with the original url and shortened link
         const { link, url } = this.state;
         const data = { link, url };
         console.log(data);
         return <div><pre>{JSON.stringify(data, null, 2) }</pre></div>;
       }
-      return (
+      return ( // otherwise render the normal input bar
         <div className="ui container" style={{ marginTop: '10px' }}>
           <Input />
         </div>
