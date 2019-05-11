@@ -1,7 +1,7 @@
 import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
 
 
 class Input extends React.Component {
