@@ -6,7 +6,10 @@ import Input from './Input';
 
 class App extends React.Component {
   state = {
-    loading: true
+    loading: true,
+    info: false,
+    url: '',
+    link: ''
   }
 
   componentWillMount() {
@@ -17,15 +20,27 @@ class App extends React.Component {
   }
 
   routeChange() {
-    const id = window.location.pathname.slice(1);
+    console.log(window.location);
+    var id = window.location.pathname;
+
+    if (id && id.startsWith('info/')) {
+      id = id.slice(6);
+      this.setState({ info: true });
+    } else {
+      id = id.slice(1)
+    }
 
     if (id) {
       const doc = firebase.firestore().collection('urls').doc(id);
       const getDoc = doc.get()
       .then(doc => {
-        if (doc.exists) { // if the doc id exists, redirect to its url
-          let newPath = doc.data().url
-          window.location = newPath;
+        if (doc.exists) { // check if the doc id exists and info not in pathname, to redirect.
+          if (this.state.info) {
+            this.setState({ url: doc.data().url, link: doc.data().link });
+          } else {
+            let newPath = doc.data().url;
+            window.location = newPath;
+          }
         } else { // if it doesn't exist, set loading = false and render normally
           this.setState({ loading: false });
         }
@@ -40,6 +55,9 @@ class App extends React.Component {
 
   renderContent() {
     if (!this.state.loading) {
+      if (this.state.info) {
+        return <div><pre>{JSON.stringify(data, null, 2) }</pre></div>;
+      }
       return (
         <div className="ui container" style={{ marginTop: '10px' }}>
           <Input />
