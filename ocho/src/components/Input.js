@@ -6,6 +6,8 @@ class Input extends React.Component {
   state = { url: '' };
 
   getRandom = () => {
+    const lengths = [6, 6, 7, 7, 8]
+    const length = lengths[Math.floor(Math.random() * lengths.length)];
     var randomString = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
@@ -14,7 +16,7 @@ class Input extends React.Component {
 
     console.log(possible.length);
 
-    for (var i = 0; i < 8; i++)
+    for (var i = 0; i < length; i++)
         randomString += possible.charAt(Math.floor(Math.random() * possible.length));
 
     // return randomString so we can save as a key in firebase.
