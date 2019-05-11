@@ -16,8 +16,8 @@ class Input extends React.Component {
           <div className="field">
             <input
               type="text"
-              placeholder='enter a URL'
-              value={this.state.term}
+              placeholder='Enter a URL'
+              value={this.props.url}
               onChange={e => this.setState({ term: e.target.value })}
             />
           </div>

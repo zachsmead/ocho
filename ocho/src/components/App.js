@@ -5,8 +5,7 @@ import Input from './Input';
 
 class App extends React.Component {
   state = {
-    url: '',
-    short: ''
+    url: ''
   };
 
   componentWillMount() {
@@ -22,7 +21,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="ui container" style={{ marginTop: '10px' }}>
-        <Input onSubmit={this.onSearchSubmit} />
+        <Input onSubmit={this.onURLSubmit} url={this.state.url} />
       </div>
     );
   }
