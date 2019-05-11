@@ -51,13 +51,14 @@ class Input extends React.Component {
     }
   }
 
-  validate = url  => {
+  validate = url => {
     console.log('url: ', url);
     // make sure the url is not too short already, nor is it from domain ocho.at
     if (
       (url.length < 16) || (!url) || (url === '')
     ) {
       this.setState({ error: 'Enter a longer URL'});
+      return false;
     } else if (
       url.startsWith('http://ocho.at')
       || url.startsWith('https://ocho.at')
@@ -69,6 +70,7 @@ class Input extends React.Component {
       || url.startsWith('www.ocho.at')
     ) {
       this.setState({ error: 'Invalid URL'});
+      return false;
     } else if (this.state.error !== '') {
       this.setState({ error: '' });
     }
@@ -85,7 +87,8 @@ class Input extends React.Component {
   onURLSubmit = async => {
     // validate the url
     const url = this.validate(this.state.url);
-      console.log(this.state)
+    console.log(this.state)
+    if (url) {
       if (this.state.error === '') {
         // generate the short, random id for the url
         const id = this.getRandom(); // get a random string
@@ -114,6 +117,7 @@ class Input extends React.Component {
               console.log('Error checking document', err);
           });
       }
+    }
   };
 
   render() {
