@@ -2,7 +2,6 @@ import React from 'react';
 import firebase from 'firebase/app';
 import firebaseConfig from 'config/firebaseConfig.js';
 import { BrowserRouter as Router } from "react-router-dom";
-import queryString from 'query-string';
 import Input from './Input';
 
 class App extends React.Component {
@@ -12,10 +11,9 @@ class App extends React.Component {
   }
 
   routeChange() {
-    let params = queryString.parse(window.location.search)
     console.log(window.location);
+    console.log(window.location.pathname);
     // let params = new URLSearchParams(window.location.search);
-    console.log(params);
     // let path = `newPath`;
     // this.props.history.push(path);
   }
