@@ -39,6 +39,29 @@ class Input extends React.Component {
     // but if it already exists as a key in firebase, do this over again
   }
 
+  checkProtocol = url => {
+    var protocolOk = url.startsWith("http://") || url.startsWith("https://") || url.startsWith("ftp://");
+
+    if (!protocolOk) {
+      const newurl = "http://" + url;
+      return newurl;
+    } else {
+      return url;
+    }
+  }
+
+  validate = url  => {
+    // make sure the url is not too short already, nor is it from domain ocho.at
+    if (
+      url.startsWith('http://ocho.at')
+      || url.startsWith('https://ocho.at')
+      || url.startsWith('ftp://ocho.at')
+      || url.startsWith('ocho.at')
+      || url.startsWith('ocho.at')
+    ) {
+      this.setState({ error: 'Invalid URL'})
+    }
+  }
 
   onFormSubmit = event => {
     event.preventDefault(); // prevent page reload
