@@ -5,6 +5,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Input from './Input';
 
 class App extends React.Component {
+  state = {
+    loading: true
+  }
+
   componentWillMount() {
     if(!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig)
@@ -14,19 +18,20 @@ class App extends React.Component {
 
   routeChange() {
     console.log(window.location);
-    console.log(window.location.pathname);
-    if (window.location.pathway) {
-      const id = window.location.pathname;
-      console.log(id);
+    const id = window.location.pathname.slice(1);
+    console.log(id);
 
+    if (id) {
       const doc = firebase.firestore().collection('urls').doc(id);
       const getDoc = doc.get()
       .then(doc => {
         if (doc.exists) { // if the doc already exists, get another random string
-          let newPath = doc.data.url
+          console.log(doc);
+          let newPath = doc.data().url
           console.log(newPath);
-          // this.props.history.push(newPath);
+          window.location = newPath;
         } else {
+          this.setState({ loading: false });
         }
       })
       .catch(err => {
@@ -35,12 +40,20 @@ class App extends React.Component {
     }
   }
 
-  render() {
-    return (
-      <Router>
+  renderContent() {
+    if (!this.state.loading) {
+      return (
         <div className="ui container" style={{ marginTop: '10px' }}>
           <Input />
         </div>
+      );
+    }
+  }
+
+  render() {
+    return (
+      <Router>
+        {this.renderContent()}
       </Router>
     );
   }
