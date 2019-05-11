@@ -5,9 +5,18 @@ class Input extends React.Component {
   state = { url: '' };
 
   getRandom = () => {
-    var randomString = Math.random().toString(32).substring(2, 5) + Math.random().toString(32).substring(2, 5);
-    console.log(randomString);
-    return randomString()
+    var randomString = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    console.log(possible.length);
+
+    for (var i = 0; i < 8; i++)
+        randomString += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    // if the randomString doesn't already exist as a value in firebase,
+    return randomString;
+
+    // otherwise do it over again
   }
 
 
@@ -20,7 +29,7 @@ class Input extends React.Component {
   onURLSubmit = async => {
     const random = this.getRandom();
     console.log(random);
-    
+
     // shorten the URL
     const short = this.state.url;
 
