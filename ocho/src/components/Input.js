@@ -53,13 +53,20 @@ class Input extends React.Component {
   validate = url  => {
     // make sure the url is not too short already, nor is it from domain ocho.at
     if (
+      (url.length < 16)
+    ) {
+      this.setState({ error: 'Enter a longer URL'});
+    } else if (
       url.startsWith('http://ocho.at')
       || url.startsWith('https://ocho.at')
       || url.startsWith('ftp://ocho.at')
       || url.startsWith('ocho.at')
-      || url.startsWith('ocho.at')
+      || url.startsWith('http://www.ocho.at')
+      || url.startsWith('https://www.ocho.at')
+      || url.startsWith('ftp://www.ocho.at')
+      || url.startsWith('www.ocho.at')
     ) {
-      this.setState({ error: 'Invalid URL'})
+      this.setState({ error: 'Invalid URL'});
     }
   }
 
