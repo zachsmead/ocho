@@ -15,9 +15,10 @@ class Input extends React.Component {
       { length: 7, min: 0.68, max: 0.925 },
       { length: 8, min: 925, max: 1 }
     ];
-    const length = lengths.forEach(e => { // get string length
+    var length = 0;
+    lengths.forEach(e => { // get string length
       if (e.min < rand && rand <= e.max) { // if rand falls in the min-max range
-        return e.length;
+        length = e.length;
       }
     });
     var randomString = "";
@@ -51,9 +52,10 @@ class Input extends React.Component {
   }
 
   validate = url  => {
+    console.log('url: ', url);
     // make sure the url is not too short already, nor is it from domain ocho.at
     if (
-      (url.length < 16)
+      (url.length < 16) || (!url) || (url === '')
     ) {
       this.setState({ error: 'Enter a longer URL'});
     } else if (
@@ -82,7 +84,7 @@ class Input extends React.Component {
     // validate the url
     const url = this.validate(this.state.url);
 
-    if (!this.state.error) {
+    if (this.state.error === '') {
       // generate the short, random id for the url
       const id = this.getRandom(); // get a random string
 
@@ -95,10 +97,19 @@ class Input extends React.Component {
         link: short
       }
 
-      // in firebase, save that object under the short random id
-      firebase.firestore().collection('urls').doc(id).set(item).then(res => { // doc(id) creates a doc with id equal to the word itself. .set() sets that docs attributes.
-        this.setState({ url: short, error: '' });
-      });
+      firebase.firestore().collection('urls').doc(id).get()
+        .then(doc => {
+          if (doc.exists) { // if the doc already exists, get another random string
+            this.onURLSubmit();
+          } else {
+            firebase.firestore().collection('urls').doc(id).set(item).then(res => { // doc(id) creates a doc with id equal to the short random string. .set() sets that docs attributes.
+              this.setState({ url: short, error: '' });
+            });
+          }
+        })
+        .catch(err => {
+            console.log('Error checking document', err);
+        });
     }
 
   };
