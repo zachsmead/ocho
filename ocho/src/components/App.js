@@ -23,9 +23,14 @@ class App extends React.Component {
     console.log(window.location);
     var id = window.location.pathname;
 
-    if (id && id.startsWith('info/')) {
+    console.log(id);
+
+    if (id && id.startsWith('/info/')) {
       id = id.slice(6);
+      console.log(id);
       this.setState({ info: true });
+      console.log(this.state);
+      // var info = true;
     } else {
       id = id.slice(1);
     }
@@ -36,7 +41,7 @@ class App extends React.Component {
       .then(doc => {
         if (doc.exists) { // if the doc id exists and '/info/' is not in the pathname (the URL bar), redirect.
           if (this.state.info) {
-            this.setState({ url: doc.data().url, link: doc.data().link });
+            this.setState({ loading: false, url: doc.data().url, link: doc.data().link });
           } else {
             let newPath = doc.data().url;
             window.location = newPath;
@@ -54,10 +59,11 @@ class App extends React.Component {
   }
 
   renderContent() {
-    const { url, link } = this.state;
-    const data = { url, link };
     if (!this.state.loading) {
       if (this.state.info) {
+        const { url, link } = this.state;
+        const data = { url, link };
+        console.log(data);
         return <div><pre>{JSON.stringify(data, null, 2) }</pre></div>;
       }
       return (
