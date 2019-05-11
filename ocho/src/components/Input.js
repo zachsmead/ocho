@@ -1,5 +1,6 @@
 import React from 'react';
 import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 class Input extends React.Component {
   state = { url: '' };
@@ -8,34 +9,45 @@ class Input extends React.Component {
     var randomString = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+    // there are 62 characters to choose from when generating a random string.
+    // with 8 character slots, there are 2.1834011e+14 unique combinations.
+
     console.log(possible.length);
 
     for (var i = 0; i < 8; i++)
         randomString += possible.charAt(Math.floor(Math.random() * possible.length));
 
-    // if the randomString doesn't already exist as a key in firebase, return it
+    // return randomString so we can save as a key in firebase.
+    console.log(randomString);
     return randomString;
 
-    // otherwise do it over again
+    // but if it already exists as a key in firebase, do this over again
   }
 
 
   onFormSubmit = event => {
-    event.preventDefault();
+    event.preventDefault(); // prevent page reload
 
     this.onURLSubmit();
   };
 
   onURLSubmit = async => {
-    const random = this.getRandom();
-    console.log(random);
+    const url = this.state.url;
 
-    // shorten the URL
-    const short = this.state.url;
+    // generate the shortened id for the url
+    const id = this.getRandom(); // get a random string
 
+    // generate the object with the original url to save in firestore
+    const item = {
+      url: url
+    }
     // save the shortened URL in firebase
+    firebase.firestore().collection('urls').doc(id).set(item).then(res => { // doc(id) creates a doc with id equal to the word itself. .set() sets that docs attributes.
+      // shorten the URL
+      const short = 'ocho.at/' + id;
+      this.setState({ url: short });
+    });
 
-    this.setState({ url: short }); // change this later to short
   };
 
   render() {
