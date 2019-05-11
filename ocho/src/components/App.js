@@ -7,14 +7,17 @@ import Input from './Input';
 
 class App extends React.Component {
   componentWillMount() {
+    this.routeChange();
     firebase.initializeApp(firebaseConfig);
   }
 
   routeChange() {
-    let params = queryString.parse(this.props.location.search)
+    let params = queryString.parse(window.location.search)
+    console.log(window.location);
+    // let params = new URLSearchParams(window.location.search);
     console.log(params);
-    let path = `newPath`;
-    this.props.history.push(path);
+    // let path = `newPath`;
+    // this.props.history.push(path);
   }
 
   render() {
