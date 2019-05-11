@@ -4,16 +4,29 @@ import firebase from 'firebase/app';
 class Input extends React.Component {
   state = { url: '' };
 
+  getRandom = () => {
+    var randomString = Math.random().toString(32).substring(2, 5) + Math.random().toString(32).substring(2, 5);
+    console.log(randomString);
+    return randomString()
+  }
+
+
   onFormSubmit = event => {
     event.preventDefault();
 
-    this.props.onURLSubmit();
+    this.onURLSubmit();
   };
 
-  onURLSubmit = async url => {
-    // shorten the URL and save it in firebase
+  onURLSubmit = async => {
+    const random = this.getRandom();
+    console.log(random);
+    
+    // shorten the URL
+    const short = this.state.url;
 
-    this.setState({ url: url }); // change this later to short
+    // save the shortened URL in firebase
+
+    this.setState({ url: short }); // change this later to short
   };
 
   render() {
