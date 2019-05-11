@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import { withRouter } from 'react-router-dom';
 
 
 class Input extends React.Component {
@@ -143,4 +144,4 @@ class Input extends React.Component {
   }
 }
 
-export default Input;
+export default withRouter(Input);

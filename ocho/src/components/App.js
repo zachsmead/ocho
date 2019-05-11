@@ -1,7 +1,8 @@
 import React from 'react';
 import firebase from 'firebase/app';
 import firebaseConfig from 'config/firebaseConfig.js';
-import { withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import queryString from 'query-string';
 import Input from './Input';
 
 class App extends React.Component {
@@ -18,11 +19,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container" style={{ marginTop: '10px' }}>
-        <Input />
-      </div>
+      <Router>
+        <div className="ui container" style={{ marginTop: '10px' }}>
+          <Input />
+        </div>
+      </Router>
     );
   }
 }
 
-export default withRouter(App);
+export default App;
