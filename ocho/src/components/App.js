@@ -8,8 +8,8 @@ class App extends React.Component {
   state = {
     loading: true,
     info: false,
-    url: '',
-    link: ''
+    link: '',
+    url: ''
   }
 
   componentWillMount() {
@@ -61,8 +61,8 @@ class App extends React.Component {
   renderContent() {
     if (!this.state.loading) {
       if (this.state.info) {
-        const { url, link } = this.state;
-        const data = { url, link };
+        const { link, url } = this.state;
+        const data = { link, url };
         console.log(data);
         return <div><pre>{JSON.stringify(data, null, 2) }</pre></div>;
       }
