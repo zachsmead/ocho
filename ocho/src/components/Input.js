@@ -3,7 +3,10 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 class Input extends React.Component {
-  state = { url: '' };
+  state = {
+    url: '',
+    error: ''
+  };
 
   getRandom = () => {
     const rand = Math.random(); // generate random number to determine string length
@@ -47,18 +50,22 @@ class Input extends React.Component {
     // get url from state
     const url = this.state.url;
 
+    // validate the url
+
     // generate the short, random id for the url
     const id = this.getRandom(); // get a random string
 
-    // generate an object that contains the original url
+    // make the shortened URL link
+    const short = 'ocho.at/' + id;
+
+    // generate an object that contains the original + shortened url
     const item = {
-      url: url
+      url: url,
+      link: short
     }
-    
+
     // in firebase, save that object under the short random id
     firebase.firestore().collection('urls').doc(id).set(item).then(res => { // doc(id) creates a doc with id equal to the word itself. .set() sets that docs attributes.
-      // shorten the URL
-      const short = 'ocho.at/' + id;
       this.setState({ url: short });
     });
 
