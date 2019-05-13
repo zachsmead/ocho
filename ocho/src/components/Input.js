@@ -58,27 +58,31 @@ class Input extends React.Component {
   }
 
   validate = url => {
-    console.log('url: ', url);
-    // make sure the url is not too short already, is not from domain ocho.at, and has a 'valid' suffix
+    // check the url protocol and add protocol if need be
+    const urlWithProtocol = this.checkProtocol(url);
+    console.log('urlWithProtocol: ', urlWithProtocol);
+    console.log('urlWithProtocol.charAt(urlWithProtocol.length - 2): ', urlWithProtocol.charAt(urlWithProtocol.length - 2));
+    // make sure the url is not too short already, is not from domain ocho.at, and has a valid suffix
+
     if (
       (url.length < 3) || (!url) || (url === '')
     ) {
-      this.setState({ error: 'Enter a longer URL'});
+      this.setState({ error: 'That URL is invalid.'});
       return false;
     } else if (
-      url.startsWith('http://ocho.at')
-      || url.startsWith('https://ocho.at')
-      || url.startsWith('ftp://ocho.at')
-      || url.startsWith('ocho.at')
-      || url.startsWith('http://www.ocho.at')
-      || url.startsWith('https://www.ocho.at')
-      || url.startsWith('ftp://www.ocho.at')
-      || url.startsWith('www.ocho.at')
+      urlWithProtocol.startsWith('http://ocho.at')
+      || urlWithProtocol.startsWith('https://ocho.at')
+      || urlWithProtocol.startsWith('ftp://ocho.at')
+      || urlWithProtocol.startsWith('ocho.at')
+      || urlWithProtocol.startsWith('http://www.ocho.at')
+      || urlWithProtocol.startsWith('https://www.ocho.at')
+      || urlWithProtocol.startsWith('ftp://www.ocho.at')
+      || urlWithProtocol.startsWith('www.ocho.at')
     ) {
-        this.setState({ error: 'Invalid URL'});
+        this.setState({ error: 'That URL is invalid.'});
         return false;
-    } else if (url[url.length - 2] === '.') {
-        this.setState({ error: 'Invalid URL'});
+    } else if (urlWithProtocol.charAt(urlWithProtocol.length - 2) === '.') {
+        this.setState({ error: 'That URL is invalid.'});
         return false;
     }
 
@@ -98,7 +102,7 @@ class Input extends React.Component {
 
   onURLSubmit = async => {
     // check the url protocol and add protocol if need be
-    const url = this.checkProtocol(this.state.url);
+    const url = this.state.url;
 
     // validate the url with protocol added
     const valid = this.validate(url);
