@@ -8,6 +8,7 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 class Input extends React.Component {
   state = {
     url: '',
+    urlWithProtocol: '',
     error: '',
     shortened: false,
     copied: false
@@ -47,20 +48,18 @@ class Input extends React.Component {
     return randomString;
   }
 
-  checkProtocol = url => {
+  addProtocol = url => {
     var protocolOk = url.startsWith("http://") || url.startsWith("https://") || url.startsWith("ftp://");
 
     if (!protocolOk) {
       const newurl = "http://" + url;
-      return newurl;
+      this.setState({ urlWithProtocol: newurl })
     } else {
-      return url;
+      this.setState({ urlWithProtocol: url })
     }
   }
 
   validate = url => {
-    // check the url protocol and add protocol if need be
-    const urlWithProtocol = this.checkProtocol(url);
     // make sure the url is not too short already, is not from domain ocho.at, and has a valid suffix
 
     if (
@@ -69,18 +68,18 @@ class Input extends React.Component {
       this.setState({ error: 'That URL is invalid.'});
       return false;
     } else if (
-      urlWithProtocol.startsWith('http://ocho.at')
-      || urlWithProtocol.startsWith('https://ocho.at')
-      || urlWithProtocol.startsWith('ftp://ocho.at')
-      || urlWithProtocol.startsWith('ocho.at')
-      || urlWithProtocol.startsWith('http://www.ocho.at')
-      || urlWithProtocol.startsWith('https://www.ocho.at')
-      || urlWithProtocol.startsWith('ftp://www.ocho.at')
-      || urlWithProtocol.startsWith('www.ocho.at')
+      url.startsWith('http://ocho.at')
+      || url.startsWith('https://ocho.at')
+      || url.startsWith('ftp://ocho.at')
+      || url.startsWith('ocho.at')
+      || url.startsWith('http://www.ocho.at')
+      || url.startsWith('https://www.ocho.at')
+      || url.startsWith('ftp://www.ocho.at')
+      || url.startsWith('www.ocho.at')
     ) {
         this.setState({ error: 'That URL is invalid.'});
         return false;
-    } else if (urlWithProtocol.charAt(urlWithProtocol.length - 2) === '.') {
+    } else if (url.charAt(url.length - 2) === '.') {
         this.setState({ error: 'That URL is invalid.'});
         return false;
     }
@@ -90,7 +89,10 @@ class Input extends React.Component {
       this.setState({ error: '' });
     }
 
-    return true; // finally, return true if no errors were found.
+    // generate the url with protocol added.
+    this.addProtocol(url);
+
+    return true; // finally, if no errors were found, return true.
   }
 
   onFormSubmit = event => {
