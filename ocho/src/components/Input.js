@@ -62,15 +62,11 @@ class Input extends React.Component {
   validate = url => {
     // make sure the url is not too short already, is not from domain ocho.at, and has a valid suffix
 
-    if (
-      (url.length < 3) || (!url) || (url === '')
-    ) {
-      this.setState({ error: 'That URL is invalid.'});
-      return false;
-    } else if (
-      !url.includes('.')
-    ) {
-        this.setState({ error: 'That URL is invalid.'});
+    if ((url.length < 3) || (!url) || (url === '')) {
+        this.setState({ error: 'Invalid URL'});
+        return false;
+    } else if (!url.includes('.')) {
+        this.setState({ error: 'Invalid URL'});
         return false;
     } else if (
       url.startsWith('http://ocho.at')
@@ -82,10 +78,10 @@ class Input extends React.Component {
       || url.startsWith('ftp://www.ocho.at')
       || url.startsWith('www.ocho.at')
     ) {
-        this.setState({ error: 'That URL is invalid.'});
+        this.setState({ error: 'Invalid URL'});
         return false;
-    } else if (url.charAt(url.length - 2) === '.') {
-        this.setState({ error: 'That URL is invalid.'});
+    } else if (url.charAt(url.length - 2) === '.' || url.charAt(url.length - 1) === '.') {
+        this.setState({ error: 'Invalid URL'});
         return false;
     }
 
