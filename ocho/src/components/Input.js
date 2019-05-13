@@ -9,7 +9,8 @@ class Input extends React.Component {
   state = {
     url: '',
     error: '',
-    shortened: false
+    shortened: false,
+    copied: false
   };
 
   componentWillMount = () => {
@@ -139,9 +140,20 @@ class Input extends React.Component {
   };
 
   renderCopyButton() {
+    if (this.state.shortened && this.state.copied) {
+      return (
+        <CopyToClipboard
+          text={this.state.url}>
+          <text>Copied!</text>
+        </CopyToClipboard>
+      );
+    }
+
     if (this.state.shortened) {
       return (
-        <CopyToClipboard text={this.state.url}>
+        <CopyToClipboard
+          text={this.state.url}
+          onCopy={() => this.setState({copied: true})}>
           <text>Copy</text>
         </CopyToClipboard>
       );
