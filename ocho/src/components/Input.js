@@ -59,7 +59,7 @@ class Input extends React.Component {
 
   validate = url => {
     console.log('url: ', url);
-    // make sure the url is not too short already, nor is it from domain ocho.at
+    // make sure the url is not too short already, is not from domain ocho.at, and has a 'valid' suffix
     if (
       (url.length < 3) || (!url) || (url === '')
     ) {
@@ -75,11 +75,17 @@ class Input extends React.Component {
       || url.startsWith('ftp://www.ocho.at')
       || url.startsWith('www.ocho.at')
     ) {
-      this.setState({ error: 'Invalid URL'});
-      return false;
-    } else if (this.state.error !== '') {
+        this.setState({ error: 'Invalid URL'});
+        return false;
+    } else if (url[url.length - 2] === '.') {
+        this.setState({ error: 'Invalid URL'});
+        return false;
+    }
+
+    // finally, if no errors were found, but previously there was an error, reset error to ''.
+    if (this.state.error !== '') {
       this.setState({ error: '' });
-    } // else if the given URL has an invalid suffix.
+    }
 
     return this.checkProtocol(url); // return the url with protocol added, if need be
   }
@@ -91,9 +97,13 @@ class Input extends React.Component {
   };
 
   onURLSubmit = async => {
-    // validate the url
-    const url = this.validate(this.state.url);
-    if (url) {
+    // check the url protocol and add protocol if need be
+    const url = this.checkProtocol(this.state.url);
+
+    // validate the url with protocol added
+    const valid = this.validate(url);
+    
+    if (valid) {
       // generate the short, random id for the url
       const id = this.getRandom(); // get a random string
 
