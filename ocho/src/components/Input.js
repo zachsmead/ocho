@@ -146,7 +146,7 @@ class Input extends React.Component {
       return (
         <CopyToClipboard
           text={this.state.url}>
-          <text>Copied!</text>
+          <text style={{cursor:'pointer'}}>Copied!</text>
         </CopyToClipboard>
       );
     }
@@ -156,7 +156,7 @@ class Input extends React.Component {
         <CopyToClipboard
           text={this.state.url}
           onCopy={() => this.setState({copied: true})}>
-          <text>Copy</text>
+          <text style={{cursor:'pointer'}}>Copy</text>
         </CopyToClipboard>
       );
     }
