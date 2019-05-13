@@ -82,12 +82,12 @@ class Input extends React.Component {
         return false;
     }
 
-    // finally, if no errors were found, but previously there was an error, reset error to ''.
+    // if no errors were found, but previously there was an error, reset error to a blank string.
     if (this.state.error !== '') {
       this.setState({ error: '' });
     }
 
-    return this.checkProtocol(url); // return the url with protocol added, if need be
+    return true; // finally, return true if no errors were found.
   }
 
   onFormSubmit = event => {
@@ -102,7 +102,7 @@ class Input extends React.Component {
 
     // validate the url with protocol added
     const valid = this.validate(url);
-    
+
     if (valid) {
       // generate the short, random id for the url
       const id = this.getRandom(); // get a random string
