@@ -98,10 +98,10 @@ class Input extends React.Component {
   onFormSubmit = event => {
     event.preventDefault(); // prevent page reload
 
-    this.onURLSubmit();
+    this.createShortenedURL();
   };
 
-  onURLSubmit = async => {
+  createShortenedURL = async => {
     // check the url protocol and add protocol if need be
     const url = this.state.url;
 
@@ -128,7 +128,7 @@ class Input extends React.Component {
       const getDoc = doc.get()
         .then(doc => {
           if (doc.exists) { // if the doc already exists, get another random string
-            this.onURLSubmit();
+            this.createShortenedURL();
           } else {
             firebase.firestore().collection('urls').doc(id).set(item).then(res => { // doc(id) creates a doc with id equal to the short random string. .set() sets that docs attributes.
               this.setState({ url: short, error: '', shortened: true });
