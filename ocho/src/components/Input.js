@@ -60,8 +60,6 @@ class Input extends React.Component {
   validate = url => {
     // check the url protocol and add protocol if need be
     const urlWithProtocol = this.checkProtocol(url);
-    console.log('urlWithProtocol: ', urlWithProtocol);
-    console.log('urlWithProtocol.charAt(urlWithProtocol.length - 2): ', urlWithProtocol.charAt(urlWithProtocol.length - 2));
     // make sure the url is not too short already, is not from domain ocho.at, and has a valid suffix
 
     if (
