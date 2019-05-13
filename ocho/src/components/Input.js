@@ -53,9 +53,9 @@ class Input extends React.Component {
 
     if (!protocolOk) {
       const newurl = "http://" + url;
-      this.setState({ urlWithProtocol: newurl })
+      return newurl
     } else {
-      this.setState({ urlWithProtocol: url })
+      return url
     }
   }
 
@@ -89,9 +89,6 @@ class Input extends React.Component {
       this.setState({ error: '' });
     }
 
-    // generate the url with protocol added.
-    this.addProtocol(url);
-
     return true; // finally, if no errors were found, return true.
   }
 
@@ -105,10 +102,13 @@ class Input extends React.Component {
     // check the url protocol and add protocol if need be
     const url = this.state.url;
 
-    // validate the url with protocol added
+    // validate the url
     const valid = this.validate(url);
 
     if (valid) {
+      // add protocol ('http://' prefix) to the url first, if needed
+      const urlWithProtocol = this.addProtocol(url);
+
       // generate the short, random id for the url
       const id = this.getRandom(); // get a random string
 
@@ -117,7 +117,7 @@ class Input extends React.Component {
 
       // generate an object that contains the original + shortened url
       const item = {
-        url: url,
+        url: urlWithProtocol,
         link: short
       }
 
