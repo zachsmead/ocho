@@ -107,6 +107,8 @@ class Input extends React.Component {
       }
 
       const doc = firebase.firestore().collection('urls').doc(id);
+      // which is faster - to check this way if the object already exists,
+      // or to create a collection of 'forbidden' document ids and check that every time?
       const getDoc = doc.get()
         .then(doc => {
           if (doc.exists) { // if the doc already exists, get another random string
