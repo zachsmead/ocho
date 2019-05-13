@@ -61,7 +61,7 @@ class Input extends React.Component {
     console.log('url: ', url);
     // make sure the url is not too short already, nor is it from domain ocho.at
     if (
-      (url.length < 16) || (!url) || (url === '')
+      (url.length < 3) || (!url) || (url === '')
     ) {
       this.setState({ error: 'Enter a longer URL'});
       return false;
@@ -79,7 +79,7 @@ class Input extends React.Component {
       return false;
     } else if (this.state.error !== '') {
       this.setState({ error: '' });
-    }
+    } // else if the given URL has an invalid suffix.
 
     return this.checkProtocol(url); // return the url with protocol added, if need be
   }
