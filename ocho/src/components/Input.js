@@ -2,7 +2,7 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import { withRouter } from 'react-router-dom'
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 
 class Input extends React.Component {
@@ -63,10 +63,10 @@ class Input extends React.Component {
     // make sure the url is not too short already, is not from domain ocho.at, and has a valid suffix
 
     if ((url.length < 3) || (!url) || (url === '')) {
-        this.setState({ error: 'Invalid URL'});
+        this.setState({ error: 'Sorry, that URL is invalid.'});
         return false;
     } else if (!url.includes('.')) {
-        this.setState({ error: 'Invalid URL'});
+        this.setState({ error: 'Sorry, that URL is invalid.'});
         return false;
     } else if (
       url.startsWith('http://ocho.at')
@@ -78,10 +78,10 @@ class Input extends React.Component {
       || url.startsWith('ftp://www.ocho.at')
       || url.startsWith('www.ocho.at')
     ) {
-        this.setState({ error: 'Invalid URL'});
+        this.setState({ error: 'Sorry, that URL is invalid.'});
         return false;
     } else if (url.charAt(url.length - 2) === '.' || url.charAt(url.length - 1) === '.') {
-        this.setState({ error: 'Invalid URL'});
+        this.setState({ error: 'Sorry, that URL is invalid.'});
         return false;
     }
 
