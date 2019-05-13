@@ -181,7 +181,9 @@ class Input extends React.Component {
         <div>
           {this.state.error}
         </div>
-        {this.renderCopyButton()}
+        <div>
+          {this.renderCopyButton()}
+        </div>
       </div>
     );
   }
