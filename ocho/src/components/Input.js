@@ -68,6 +68,11 @@ class Input extends React.Component {
       this.setState({ error: 'That URL is invalid.'});
       return false;
     } else if (
+      !url.includes('.')
+    ) {
+        this.setState({ error: 'That URL is invalid.'});
+        return false;
+    } else if (
       url.startsWith('http://ocho.at')
       || url.startsWith('https://ocho.at')
       || url.startsWith('ftp://ocho.at')
