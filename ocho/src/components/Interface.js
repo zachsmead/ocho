@@ -3,9 +3,10 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import { withRouter } from 'react-router-dom'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { Container, Row, Col } from 'reactstrap';
 
 
-class Input extends React.Component {
+class Interface extends React.Component {
   state = {
     url: '',
     urlWithProtocol: '',
@@ -167,26 +168,32 @@ class Input extends React.Component {
     console.log(this.state);
 
     return (
-      <div className="ui segment">
-        <form onSubmit={this.onFormSubmit} className="ui form">
-          <div className="field">
-            <input
-              type="text"
-              placeholder='Enter a URL'
-              value={this.state.url}
-              onChange={e => this.setState({ url: e.target.value, shortened: false })}
-            />
-          </div>
-        </form>
-        <div>
-          {this.state.error}
-        </div>
-        <div>
-          {this.renderCopyButton()}
-        </div>
-      </div>
+      <Container>
+        <Row>
+          <Col>
+            <form onSubmit={this.onFormSubmit} className="ui form">
+              <div className="field">
+                <input
+                  type="text"
+                  placeholder='Enter a URL'
+                  value={this.state.url}
+                  onChange={e => this.setState({ url: e.target.value, shortened: false })}
+                />
+              </div>
+            </form>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            {this.state.error}
+          </Col>
+          <Col>
+            {this.renderCopyButton()}
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
 
-export default withRouter(Input);
+export default withRouter(Interface);

@@ -2,7 +2,7 @@ import React from 'react';
 import firebase from 'firebase/app';
 import firebaseConfig from 'config/firebaseConfig.js';
 import { BrowserRouter as Router } from "react-router-dom";
-import Input from './Input';
+import Interface from './Interface';
 
 class App extends React.Component {
   state = {
@@ -67,7 +67,7 @@ class App extends React.Component {
       }
       return ( // otherwise render the normal input bar
         <div className="ui container" style={{ marginTop: '10px' }}>
-          <Input />
+          <Interface />
         </div>
       );
     }
