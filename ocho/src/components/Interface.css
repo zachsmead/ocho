@@ -2,7 +2,7 @@ body > #root {
   height: 100vh; /* fixes the issue of rows not spacing evenly with bootstrap */
 }
 
-.container {
+.container-fluid {
   display: flex;
   flex-direction: column;
   height: 100%;
