@@ -1,17 +1,14 @@
 import React from 'react';
-import { CSSTransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import { withRouter } from 'react-router-dom'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Container, Row, Col } from 'reactstrap';
 
-
-import getRandomString from 'helpers/getRandomString';
-
 import './Interface.css';
 
-const fadeDuration = 10; // this is from an online example, not sure where to put it.
+import getRandomString from 'helpers/getRandomString';
 
 
 class Interface extends React.Component {
@@ -19,6 +16,7 @@ class Interface extends React.Component {
     url: '',
     urlWithProtocol: '',
     error: '',
+    showError: '',
     shortened: false,
     copied: false,
   };
@@ -149,13 +147,9 @@ class Interface extends React.Component {
   renderError() {
     if (this.state.error) {
       return (
-        <CSSTransitionGroup
-          transitionName='error'
-        >
-          <Col md="12">
-            {this.state.error}
-          </Col>
-        </CSSTransitionGroup>
+        <Col md="12">
+          {this.state.error}
+        </Col>
       )
     }
   }
@@ -187,7 +181,15 @@ class Interface extends React.Component {
           </Col>
         </Row>
         <Row style={{ flex: 1, color: 'grey' }}>
-          {this.renderError()}
+          <CSSTransition
+            in={this.state.error !== ''}
+            timeout={200}
+            classNames="errorMessage"
+          >
+            <div>
+              {this.renderError()}
+            </div>
+          </CSSTransition>
         </Row>
       </Container>
     );

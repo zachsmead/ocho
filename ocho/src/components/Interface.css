@@ -59,20 +59,20 @@ a {
   outline: none !important;
 }
 
-.error-enter {
+.errorMessage-enter {
   opacity: 0.01;
 }
 
-.error-enter-active {
+.errorMessage-enter-active {
   opacity: 1;
   transition: opacity 300ms ease-in;
 }
 
-.error-leave {
+.errorMessage-leave {
   opacity: 1;
 }
 
-.error-leave-active {
+.errorMessage-leave-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
 }
