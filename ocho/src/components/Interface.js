@@ -125,7 +125,7 @@ class Interface extends React.Component {
       return (
         <CopyToClipboard
           text={this.state.url}>
-          <text style={{cursor:'pointer'}}>Copied!</text>
+          <text style={{cursor:'pointer'}}>Link copied!</text>
         </CopyToClipboard>
       );
     }
@@ -135,7 +135,7 @@ class Interface extends React.Component {
         <CopyToClipboard
           text={this.state.url}
           onCopy={() => this.setState({copied: true})}>
-          <text style={{cursor:'pointer'}}>Copy</text>
+          <text style={{cursor:'pointer'}}>Copy link</text>
         </CopyToClipboard>
       );
     }
@@ -146,8 +146,10 @@ class Interface extends React.Component {
 
     return (
       <Container fluid>
-        <Row style={{backgroundColor: 'red', flex: 1}}>
-          <Col sm={{ size: 8, offset: 2 }} style={{ padding: 0 }}>
+        <Row style={{backgroundColor: 'white', flex: 1}}>
+        </Row>
+        <Row style={{backgroundColor: 'white', flex: 1}}>
+          <Col sm={{ size: 6, offset: 3 }} style={{ padding: 0 }}>
             <div>
               <form onSubmit={this.onFormSubmit}>
                 <input
@@ -160,11 +162,11 @@ class Interface extends React.Component {
               </form>
             </div>
           </Col>
-          <Col sm={{ size: 2 }} style={{ padding: 0 }}>
+          <Col sm={{ size: 3 }} style={{ padding: 0 }}>
             {this.renderCopyButton()}
           </Col>
         </Row>
-        <Row style={{ backgroundColor: 'blue', flex: 1 }}>
+        <Row style={{ backgroundColor: 'white', flex: 1 }}>
           <Col sm="12">
             {this.state.error}
           </Col>
