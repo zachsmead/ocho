@@ -171,8 +171,7 @@ class Interface extends React.Component {
     console.log(this.state);
 
     return (
-      <Container style={{display: 'flex', flexDirection: 'column',
-      justifyContent: 'space-between', height: '100%'}}>
+      <Container>
         <Row className="" style={{backgroundColor: 'red'}}>
           <Col sm="12" className="">
             <form onSubmit={this.onFormSubmit} className="">
