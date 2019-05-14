@@ -4,7 +4,6 @@ import 'firebase/firestore';
 import { withRouter } from 'react-router-dom'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Container, Row, Col } from 'reactstrap';
-import { default as Fade } from 'react-fade'
 
 
 import getRandomString from 'helpers/getRandomString';
@@ -19,24 +18,12 @@ class Interface extends React.Component {
     url: '',
     urlWithProtocol: '',
     error: '',
-    errorFadeOut: false,
-    errorVisibility: 'visible',
     shortened: false,
     copied: false,
   };
 
   componentWillMount = () => {
     console.log(this.state);
-  }
-
-  componentDidUpdate(nextProps, { fadeOut }) {
-    if (fadeOut) {
-      setTimeout(() => {
-        this.setState({
-          visibility: 'hidden'
-        })
-      }, fadeDuration)
-    }
   }
 
   addProtocol = url => {
@@ -52,7 +39,6 @@ class Interface extends React.Component {
 
   generateErrorMessage() {
     this.setState({ error: 'Sorry, that URL is invalid.'});
-    this.setState({ fadeOut: true });
   }
 
   validate = url => {
@@ -163,15 +149,7 @@ class Interface extends React.Component {
     if (this.state.error) {
       return (
         <Col md="12">
-          <Fade
-            out={this.state.errorFadeOut}
-            duration={fadeDuration}
-            style={{
-              errorVisibility: this.state.errorVisibility
-            }}
-          >
-            {this.state.error}
-          </Fade>
+          {this.state.error}
         </Col>
       )
     }
