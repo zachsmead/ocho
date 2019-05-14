@@ -4,6 +4,8 @@ import 'firebase/firestore';
 import { withRouter } from 'react-router-dom'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Container, Row, Col } from 'reactstrap';
+import { default as Fade } from 'react-fade'
+
 
 import getRandomString from 'helpers/getRandomString';
 
@@ -15,8 +17,10 @@ class Interface extends React.Component {
     url: '',
     urlWithProtocol: '',
     error: '',
+    errorFadeOut: false,
+    errorVisibility: 'visible',
     shortened: false,
-    copied: false
+    copied: false,
   };
 
   componentWillMount = () => {
