@@ -147,7 +147,7 @@ class Interface extends React.Component {
       <Container fluid>
         <Row style={{backgroundColor: 'red', flex: 1}}>
           <Col sm="12">
-            <div className="inputContainer">
+            <div className="input-container">
               <div className="input-block">
                 <form onSubmit={this.onFormSubmit}>
                   <div className="field">

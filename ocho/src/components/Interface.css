@@ -9,13 +9,17 @@ body > #root {
 }
 
 .input-block {
+  flex: 3;
+  width: 67%;
   display: inline-block;
 }
 
 .button-block {
+  flex: 1;
+  width: 33%;
   display: inline-block;
 }
 
 .text-input {
-  width: 100vh !important;
+  width: 100% !important;
 }
