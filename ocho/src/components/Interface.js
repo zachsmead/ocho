@@ -60,6 +60,9 @@ class Interface extends React.Component {
     } else if (url.charAt(url.length - 2) === '.' || url.charAt(url.length - 1) === '.') {
         this.setState({ error: 'Sorry, that URL is invalid.'});
         return false;
+    } else if (url.charAt(0) === '.') {
+        this.setState({ error: 'Sorry, that URL is invalid.'});
+        return false;
     }
 
     // if no errors were found, but previously there was an error, reset error to a blank string.
@@ -150,15 +153,13 @@ class Interface extends React.Component {
             <div className="input-container">
               <div className="input-block">
                 <form onSubmit={this.onFormSubmit}>
-                  <div className="field">
-                    <input
-                      className="text-input"
-                      type="text"
-                      placeholder='Enter a URL'
-                      value={this.state.url}
-                      onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false })}
-                    />
-                  </div>
+                  <input
+                    className="text-input"
+                    type="text"
+                    placeholder='Enter a URL'
+                    value={this.state.url}
+                    onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false })}
+                  />
                 </form>
               </div>
               <div className="button-block">
