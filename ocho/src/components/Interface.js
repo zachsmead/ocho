@@ -145,13 +145,22 @@ class Interface extends React.Component {
   }
 
   renderError() {
-    if (this.state.error) {
+    // if (this.state.error) {
       return (
         <Col md="12">
-          {this.state.error}
+          <CSSTransition
+            in={this.state.error}
+            timeout={300}
+            classNames="errorMessage"
+            unmountOnExit
+          >
+            <div>
+              {this.state.error}
+            </div>
+          </CSSTransition>
         </Col>
       )
-    }
+    // }
   }
 
   render() {
@@ -181,15 +190,7 @@ class Interface extends React.Component {
           </Col>
         </Row>
         <Row style={{ flex: 1, color: 'grey' }}>
-          <CSSTransition
-            in={this.state.error !== ''}
-            timeout={200}
-            classNames="errorMessage"
-          >
-            <div>
-              {this.renderError()}
-            </div>
-          </CSSTransition>
+          {this.renderError()}
         </Row>
       </Container>
     );

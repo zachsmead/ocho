@@ -60,19 +60,19 @@ a {
 }
 
 .errorMessage-enter {
-  opacity: 0.01;
+  opacity: 0;
 }
 
 .errorMessage-enter-active {
   opacity: 1;
-  transition: opacity 300ms ease-in;
+  transition: opacity 300ms;
 }
 
-.errorMessage-leave {
+.errorMessage-exit {
   opacity: 1;
 }
 
-.errorMessage-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+.errorMessage-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
 }
