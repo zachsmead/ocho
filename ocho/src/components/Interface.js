@@ -5,6 +5,9 @@ import { withRouter } from 'react-router-dom'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Container, Row, Col } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import getRandomString from 'helpers/getRandomString';
+
 import './Interface.css';
 
 
@@ -70,8 +73,6 @@ class Interface extends React.Component {
   onFormSubmit = event => {
     event.preventDefault(); // prevent page reload
 
-    this.setState({ copied: false });
-
     this.createShortenedURL();
   };
 
@@ -87,7 +88,7 @@ class Interface extends React.Component {
       const urlWithProtocol = this.addProtocol(url);
 
       // generate the short, random id for the url
-      const id = this.getRandomString(); // get a random string
+      const id = getRandomString(); // get a random string
 
       // make the shortened URL link
       const short = 'ocho.at/' + id;
@@ -152,7 +153,7 @@ class Interface extends React.Component {
                   type="text"
                   placeholder='Enter a URL'
                   value={this.state.url}
-                  onChange={e => this.setState({ url: e.target.value, shortened: false })}
+                  onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false })}
                 />
               </div>
             </form>
