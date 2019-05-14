@@ -7,3 +7,15 @@ body > #root {
   flex-direction: column;
   height: 100%;
 }
+
+.input-block {
+  display: inline-block;
+}
+
+.button-block {
+  display: inline-block;
+}
+
+.text-input {
+  width: 100vh !important;
+}

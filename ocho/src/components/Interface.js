@@ -145,26 +145,31 @@ class Interface extends React.Component {
 
     return (
       <Container fluid>
-        <Row className="" style={{backgroundColor: 'red', flex: 1}}>
-          <Col sm="12" className="">
-            <form onSubmit={this.onFormSubmit} className="">
-              <div className="field">
-                <input
-                  type="text"
-                  placeholder='Enter a URL'
-                  value={this.state.url}
-                  onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false })}
-                />
+        <Row style={{backgroundColor: 'red', flex: 1}}>
+          <Col sm="12">
+            <div className="inputContainer">
+              <div className="input-block">
+                <form onSubmit={this.onFormSubmit}>
+                  <div className="field">
+                    <input
+                      className="text-input"
+                      type="text"
+                      placeholder='Enter a URL'
+                      value={this.state.url}
+                      onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false })}
+                    />
+                  </div>
+                </form>
               </div>
-            </form>
+              <div className="button-block">
+                {this.renderCopyButton()}
+              </div>
+            </div>
           </Col>
         </Row>
         <Row style={{backgroundColor: 'blue', flex: 1}}>
-          <Col sm="6">
+          <Col sm="12">
             {this.state.error}
-          </Col>
-          <Col sm="6">
-            {this.renderCopyButton()}
           </Col>
         </Row>
       </Container>
