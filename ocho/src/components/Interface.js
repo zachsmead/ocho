@@ -149,7 +149,7 @@ class Interface extends React.Component {
         <Row style={{backgroundColor: 'white', flex: 1}}>
         </Row>
         <Row style={{backgroundColor: 'white', flex: 1}}>
-          <Col sm={{ size: 6, offset: 3 }} style={{ padding: 10 }}>
+          <Col md={{ size: 6, offset: 3 }} style={{ padding: 10 }}>
             <div>
               <form onSubmit={this.onFormSubmit}>
                 <input
@@ -162,12 +162,12 @@ class Interface extends React.Component {
               </form>
             </div>
           </Col>
-          <Col sm={{ size: 2 }} style={{ padding: 10, paddingTop: 15 }}>
+          <Col md={{ size: 2 }} style={{ padding: 10, paddingTop: 20 }}>
             {this.renderCopyButton()}
           </Col>
         </Row>
-        <Row style={{ backgroundColor: 'white', flex: 1 }}>
-          <Col sm="12">
+        <Row style={{ backgroundColor: 'white', flex: 1, color: 'grey' }}>
+          <Col md="12">
             {this.state.error}
           </Col>
         </Row>
