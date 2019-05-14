@@ -122,7 +122,7 @@ class Interface extends React.Component {
       return (
         <CopyToClipboard
           text={this.state.url}>
-          <text style={{cursor:'pointer', color: '#238ddb'}}>Copied!</text>
+          <text className='link' style={{cursor:'pointer'}}>Copied!</text>
         </CopyToClipboard>
       );
     }
@@ -165,7 +165,7 @@ class Interface extends React.Component {
                   type="text"
                   placeholder='Enter a URL'
                   value={this.state.url}
-                  onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false })}
+                  onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false, error: '' })}
                 />
               </form>
             </div>
@@ -176,11 +176,6 @@ class Interface extends React.Component {
         </Row>
         <Row style={{ flex: 1, color: 'grey' }}>
           {this.renderError()}
-        </Row>
-        <Row style={{ flex: 1}}>
-          <Col md={{ size: 12 }} style={{ padding: 10 }}>
-            <text class='link'><a class='link' href='google.com'>about</a></text>
-          </Col>
         </Row>
       </Container>
     );

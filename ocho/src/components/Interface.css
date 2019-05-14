@@ -25,6 +25,12 @@ body > #root {
   text-decoration: 'none' !important;
 }
 
+.about-link {
+  font-size: 0.68em;
+  color: grey;
+  text-decoration: 'none' !important;
+}
+
 a {
   color: #238ddb;
   text-decoration: 'none' !important;

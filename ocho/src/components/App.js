@@ -3,6 +3,7 @@ import firebase from 'firebase/app';
 import firebaseConfig from 'config/firebaseConfig.js';
 import { BrowserRouter as Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from 'reactstrap';
 import Interface from './Interface';
 
 class App extends React.Component {
@@ -67,7 +68,16 @@ class App extends React.Component {
         return <div style={{ textAlign: 'left' }}><pre>{JSON.stringify(data, null, 2) }</pre></div>;
       }
       return ( // otherwise render the normal interface
-        <Interface />
+        <Container fluid>
+          <Row style={{ flex: 8}}>
+            <Interface />
+          </Row>
+          <Row style={{ flex: 1}}>
+            <Col md={{ size: 12 }} style={{ padding: 10 }}>
+              <text class='about-link' style={{cursor:'pointer'}}>about this site</text>
+            </Col>
+          </Row>
+        </Container>
       );
     }
   }
