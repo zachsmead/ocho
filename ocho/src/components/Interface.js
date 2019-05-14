@@ -11,6 +11,8 @@ import getRandomString from 'helpers/getRandomString';
 
 import './Interface.css';
 
+const fadeDuration = 10; // this is from an online example, not sure where to put it.
+
 
 class Interface extends React.Component {
   state = {
@@ -27,6 +29,16 @@ class Interface extends React.Component {
     console.log(this.state);
   }
 
+  componentDidUpdate(nextProps, { fadeOut }) {
+    if (fadeOut) {
+      setTimeout(() => {
+        this.setState({
+          visibility: 'hidden'
+        })
+      }, fadeDuration)
+    }
+  }
+
   addProtocol = url => {
     var protocolOk = url.startsWith("http://") || url.startsWith("https://") || url.startsWith("ftp://");
 
@@ -38,13 +50,18 @@ class Interface extends React.Component {
     }
   }
 
+  generateErrorMessage() {
+    this.setState({ error: 'Sorry, that URL is invalid.'});
+    this.setState({ fadeOut: true });
+  }
+
   validate = url => {
     // make sure the url is not too short already, is not from domain ocho.at, and has a valid suffix
     if ((url.length < 3) || (!url) || (url === '')) {
-        this.setState({ error: 'Sorry, that URL is invalid.'});
+        this.generateErrorMessage();
         return false;
     } else if (!url.includes('.')) {
-        this.setState({ error: 'Sorry, that URL is invalid.'});
+        this.generateErrorMessage();
         return false;
     } else if (
       url.startsWith('http://ocho.at')
@@ -56,13 +73,13 @@ class Interface extends React.Component {
       || url.startsWith('ftp://www.ocho.at')
       || url.startsWith('www.ocho.at')
     ) {
-        this.setState({ error: 'Sorry, that URL is invalid.'});
+        this.generateErrorMessage();
         return false;
     } else if (url.charAt(url.length - 2) === '.' || url.charAt(url.length - 1) === '.') {
-        this.setState({ error: 'Sorry, that URL is invalid.'});
+        this.generateErrorMessage();
         return false;
     } else if (url.charAt(0) === '.') {
-        this.setState({ error: 'Sorry, that URL is invalid.'});
+        this.generateErrorMessage();
         return false;
     }
 
@@ -146,7 +163,15 @@ class Interface extends React.Component {
     if (this.state.error) {
       return (
         <Col md="12">
-          {this.state.error}
+          <Fade
+            out={this.state.errorFadeOut}
+            duration={fadeDuration}
+            style={{
+              errorVisibility: this.state.errorVisibility
+            }}
+          >
+            {this.state.error}
+          </Fade>
         </Col>
       )
     }
