@@ -1,4 +1,5 @@
 import React from 'react';
+import { CSSTransitionGroup } from 'react-transition-group';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import { withRouter } from 'react-router-dom'
@@ -148,9 +149,13 @@ class Interface extends React.Component {
   renderError() {
     if (this.state.error) {
       return (
-        <Col md="12">
-          {this.state.error}
-        </Col>
+        <CSSTransitionGroup
+          transitionName='error'
+        >
+          <Col md="12">
+            {this.state.error}
+          </Col>
+        </CSSTransitionGroup>
       )
     }
   }
