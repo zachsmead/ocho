@@ -4,6 +4,9 @@ import 'firebase/firestore';
 import { withRouter } from 'react-router-dom'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Container, Row, Col } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Interface.css';
+
 
 
 class Interface extends React.Component {
@@ -168,10 +171,11 @@ class Interface extends React.Component {
     console.log(this.state);
 
     return (
-      <Container>
-        <Row>
-          <Col>
-            <form onSubmit={this.onFormSubmit} className="ui form">
+      <Container style={{display: 'flex', flexDirection: 'column',
+      justifyContent: 'space-between', height: '100%'}}>
+        <Row className="" style={{backgroundColor: 'red'}}>
+          <Col sm="12" className="">
+            <form onSubmit={this.onFormSubmit} className="">
               <div className="field">
                 <input
                   type="text"
@@ -183,11 +187,11 @@ class Interface extends React.Component {
             </form>
           </Col>
         </Row>
-        <Row>
-          <Col>
+        <Row style={{backgroundColor: 'blue'}}>
+          <Col sm="6">
             {this.state.error}
           </Col>
-          <Col>
+          <Col sm="6">
             {this.renderCopyButton()}
           </Col>
         </Row>

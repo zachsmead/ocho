@@ -2,6 +2,7 @@ import React from 'react';
 import firebase from 'firebase/app';
 import firebaseConfig from 'config/firebaseConfig.js';
 import { BrowserRouter as Router } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Interface from './Interface';
 
 class App extends React.Component {
@@ -65,10 +66,8 @@ class App extends React.Component {
         console.log(data);
         return <div><pre>{JSON.stringify(data, null, 2) }</pre></div>;
       }
-      return ( // otherwise render the normal input bar
-        <div className="ui container" style={{ marginTop: '10px' }}>
-          <Interface />
-        </div>
+      return ( // otherwise render the normal interface
+        <Interface />
       );
     }
   }
