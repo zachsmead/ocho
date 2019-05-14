@@ -1,5 +1,5 @@
 body {
-  font-size: 1.3em;
+  font-size: 1.082em;
   font-weight: 300;
   text-align: center;
   font-family: -apple-system,
@@ -18,6 +18,16 @@ body {
 
 body > #root {
   height: 100vh; /* fixes the issue of rows not spacing evenly with bootstrap */
+}
+
+.link {
+  color: #238ddb;
+  text-decoration: 'none' !important;
+}
+
+a {
+  color: #238ddb;
+  text-decoration: 'none' !important;
 }
 
 .container-fluid {

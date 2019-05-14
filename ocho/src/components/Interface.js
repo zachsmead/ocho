@@ -132,7 +132,7 @@ class Interface extends React.Component {
         <CopyToClipboard
           text={this.state.url}
           onCopy={() => this.setState({copied: true})}>
-          <text style={{cursor:'pointer', color: '#238ddb'}}>Copy</text>
+          <text className='link' style={{cursor:'pointer'}}>Copy link</text>
         </CopyToClipboard>
       );
     }
@@ -170,12 +170,17 @@ class Interface extends React.Component {
               </form>
             </div>
           </Col>
-          <Col md="auto" style={{ padding: 30, paddingTop: 30 }}>
+          <Col md="auto" style={{ padding: 20, paddingTop: 34 }}>
             {this.renderCopyButton()}
           </Col>
         </Row>
         <Row style={{ flex: 1, color: 'grey' }}>
           {this.renderError()}
+        </Row>
+        <Row style={{ flex: 1}}>
+          <Col md={{ size: 12 }} style={{ padding: 10 }}>
+            <text class='link'><a class='link' href='google.com'>about</a></text>
+          </Col>
         </Row>
       </Container>
     );
