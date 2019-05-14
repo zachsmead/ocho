@@ -1,9 +1,23 @@
 body {
   font-size: 2em;
+  font-weight: 300;
+  text-align: center;
+  font-family: -apple-system,
+                system-ui,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Oxygen-Sans,
+                Ubuntu,
+                Cantarell,
+                "Helvetica Neue",
+                sans-serif;
 }
 
 body > #root {
   height: 100vh; /* fixes the issue of rows not spacing evenly with bootstrap */
+  /* --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; */
+  /* --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
 }
 
 .container-fluid {
@@ -12,24 +26,25 @@ body > #root {
   height: 100%;
 }
 
-
 .input-container {
   text-align: center;
 }
 
 .input-block {
   flex: 3;
-  width: 60%;
+  width: 55%;
   display: inline-block;
 }
 
 .button-block {
   flex: 1;
-  width: 33%;
+  width: 10%;
   display: inline-block;
   text-align: left;
+  margin-left: 20px;
 }
 
 .text-input {
   width: 100% !important;
+  font-weight: 300;
 }
