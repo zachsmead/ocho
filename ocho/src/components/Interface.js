@@ -172,7 +172,7 @@ class Interface extends React.Component {
 
     return (
       <Container>
-        <Row className="" style={{backgroundColor: 'red'}}>
+        <Row className="" style={{backgroundColor: 'red', flex: 1}}>
           <Col sm="12" className="">
             <form onSubmit={this.onFormSubmit} className="">
               <div className="field">
@@ -186,7 +186,7 @@ class Interface extends React.Component {
             </form>
           </Col>
         </Row>
-        <Row style={{backgroundColor: 'blue'}}>
+        <Row style={{backgroundColor: 'blue', flex: 1}}>
           <Col sm="6">
             {this.state.error}
           </Col>
