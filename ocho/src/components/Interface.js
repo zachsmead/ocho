@@ -36,7 +36,6 @@ class Interface extends React.Component {
 
   validate = url => {
     // make sure the url is not too short already, is not from domain ocho.at, and has a valid suffix
-
     if ((url.length < 3) || (!url) || (url === '')) {
         this.setState({ error: 'Sorry, that URL is invalid.'});
         return false;
@@ -63,11 +62,6 @@ class Interface extends React.Component {
         return false;
     }
 
-    // if no errors were found, but previously there was an error, reset error to a blank string.
-    if (this.state.error !== '') {
-      this.setState({ error: '' });
-    }
-
     return true; // finally, if no errors were found, return true.
   }
 
@@ -78,6 +72,9 @@ class Interface extends React.Component {
   };
 
   createShortenedURL = async => {
+    // first, in case previously there was an error, we want to reset error to a blank string.
+    this.setState({ error: '' });
+
     // check the url protocol and add protocol if need be
     const url = this.state.url;
 
@@ -125,7 +122,7 @@ class Interface extends React.Component {
       return (
         <CopyToClipboard
           text={this.state.url}>
-          <text style={{cursor:'pointer'}}>Link copied!</text>
+          <text style={{cursor:'pointer', color: '#238ddb'}}>Copied!</text>
         </CopyToClipboard>
       );
     }
@@ -135,9 +132,19 @@ class Interface extends React.Component {
         <CopyToClipboard
           text={this.state.url}
           onCopy={() => this.setState({copied: true})}>
-          <text style={{cursor:'pointer'}}>Copy link</text>
+          <text style={{cursor:'pointer', color: '#238ddb'}}>Copy</text>
         </CopyToClipboard>
       );
+    }
+  }
+
+  renderError() {
+    if (this.state.error) {
+      return (
+        <Col md="12">
+          {this.state.error}
+        </Col>
+      )
     }
   }
 
@@ -163,14 +170,12 @@ class Interface extends React.Component {
               </form>
             </div>
           </Col>
-          <Col md={{ size: 2 }} style={{ padding: 10, paddingTop: 28 }}>
+          <Col md="auto" style={{ padding: 30, paddingTop: 30 }}>
             {this.renderCopyButton()}
           </Col>
         </Row>
         <Row style={{ flex: 1, color: 'grey' }}>
-          <Col md="12">
-            {this.state.error}
-          </Col>
+          {this.renderError()}
         </Row>
       </Container>
     );

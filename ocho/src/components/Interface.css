@@ -21,6 +21,7 @@ body > #root {
 }
 
 .container-fluid {
+  padding-top: 45px;
   display: flex;
   flex-direction: column;
   height: 100%;
