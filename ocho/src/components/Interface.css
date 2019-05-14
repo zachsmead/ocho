@@ -25,7 +25,8 @@ body > #root {
 }
 
 .text-input {
-  font-size: 1.5em;
+  height: 75px;
+  font-size: 1.4em;
   border:1px solid black;
   border-radius: 0.3em;
   width: 100% !important;

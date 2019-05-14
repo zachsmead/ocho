@@ -162,7 +162,7 @@ class Interface extends React.Component {
               </form>
             </div>
           </Col>
-          <Col md={{ size: 2 }} style={{ padding: 10, paddingTop: 20 }}>
+          <Col md={{ size: 2 }} style={{ padding: 10, paddingTop: 28 }}>
             {this.renderCopyButton()}
           </Col>
         </Row>
