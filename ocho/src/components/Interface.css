@@ -58,3 +58,21 @@ a {
 .text-input:focus {
   outline: none !important;
 }
+
+.error-enter {
+  opacity: 0.01;
+}
+
+.error-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.error-leave {
+  opacity: 1;
+}
+
+.error-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
