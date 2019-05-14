@@ -146,9 +146,10 @@ class Interface extends React.Component {
 
     return (
       <Container fluid>
-        <Row style={{backgroundColor: 'white', flex: 1}}>
+        <Row style={{ flex: 1}}>
+
         </Row>
-        <Row style={{backgroundColor: 'white', flex: 1}}>
+        <Row style={{ flex: 1 }}>
           <Col md={{ size: 6, offset: 3 }} style={{ padding: 10 }}>
             <div>
               <form onSubmit={this.onFormSubmit}>
@@ -166,7 +167,7 @@ class Interface extends React.Component {
             {this.renderCopyButton()}
           </Col>
         </Row>
-        <Row style={{ backgroundColor: 'white', flex: 1, color: 'grey' }}>
+        <Row style={{ flex: 1, color: 'grey' }}>
           <Col md="12">
             {this.state.error}
           </Col>

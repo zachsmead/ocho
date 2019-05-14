@@ -12,6 +12,8 @@ body {
                 Cantarell,
                 "Helvetica Neue",
                 sans-serif;
+  background-color: #f7f7f7;
+  /* background-color: #fffcfc; */
 }
 
 body > #root {
@@ -33,6 +35,7 @@ body > #root {
   font-weight: 300;
   padding-left: 3%;
   padding-right: 3%;
+  background-color: white;
 }
 
 .text-input:focus {

@@ -64,7 +64,7 @@ class App extends React.Component {
         const { link, url } = this.state;
         const data = { link, url };
         console.log(data);
-        return <div><pre>{JSON.stringify(data, null, 2) }</pre></div>;
+        return <div style={{ textAlign: 'left' }}><pre>{JSON.stringify(data, null, 2) }</pre></div>;
       }
       return ( // otherwise render the normal interface
         <Interface />
