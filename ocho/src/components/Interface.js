@@ -4,13 +4,10 @@ import 'firebase/firestore';
 import { withRouter } from 'react-router-dom'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Container, Row, Col } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 import getRandomString from 'helpers/getRandomString';
 
 import './Interface.css';
-
 
 
 class Interface extends React.Component {
@@ -150,26 +147,24 @@ class Interface extends React.Component {
     return (
       <Container fluid>
         <Row style={{backgroundColor: 'red', flex: 1}}>
-          <Col sm="12">
-            <div className="input-container">
-              <div className="input-block">
-                <form onSubmit={this.onFormSubmit}>
-                  <input
-                    className="text-input"
-                    type="text"
-                    placeholder='Enter a URL'
-                    value={this.state.url}
-                    onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false })}
-                  />
-                </form>
-              </div>
-              <div className="button-block">
-                {this.renderCopyButton()}
-              </div>
+          <Col sm={{ size: 8, offset: 2 }} style={{ padding: 0 }}>
+            <div>
+              <form onSubmit={this.onFormSubmit}>
+                <input
+                  className="text-input"
+                  type="text"
+                  placeholder='Enter a URL'
+                  value={this.state.url}
+                  onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false })}
+                />
+              </form>
             </div>
           </Col>
+          <Col sm={{ size: 2 }} style={{ padding: 0 }}>
+            {this.renderCopyButton()}
+          </Col>
         </Row>
-        <Row style={{backgroundColor: 'blue', flex: 1}}>
+        <Row style={{ backgroundColor: 'blue', flex: 1 }}>
           <Col sm="12">
             {this.state.error}
           </Col>

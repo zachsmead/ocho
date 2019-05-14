@@ -24,24 +24,6 @@ body > #root {
   height: 100%;
 }
 
-.input-container {
-  text-align: center;
-}
-
-.input-block {
-  flex: 3;
-  width: 55%;
-  display: inline-block;
-}
-
-.button-block {
-  flex: 1;
-  width: 10%;
-  display: inline-block;
-  text-align: left;
-  margin-left: 20px;
-}
-
 .text-input {
   width: 100% !important;
   font-weight: 300;
