@@ -105,7 +105,7 @@ class App extends React.Component {
             contentLabel="Example Modal"
             closeTimeoutMS={150}
           >
-            <Container>
+            <Container fluid style={{width: '100%'}}>
               <Row style={{ flex: 2}}>
                 <Col md={{ size: 12 }} style={{ padding: 10 }}>
                   <text
@@ -125,7 +125,7 @@ class App extends React.Component {
                 </Col>
               </Row>
               <Row style={{ flex: 5}}>
-                <Col md={{ size: 8, offset: 2 }}>
+                <Col md={{ size: 10, offset: 1 }}>
                   <div class='about-content'>
                     <text >
                       <div class='about-subcontent'>
