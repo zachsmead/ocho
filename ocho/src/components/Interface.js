@@ -139,21 +139,15 @@ class Interface extends React.Component {
       );
     }
 
-    if (this.state.shortened && this.state.copied) {
-      return (
-        <CopyToClipboard
-          text={this.state.url}>
-          <text className='link' style={{cursor:'pointer'}}>Copied!</text>
-        </CopyToClipboard>
-      );
-    }
-
     if (this.state.shortened) {
       return (
         <CopyToClipboard
           text={this.state.url}
-          onCopy={() => this.setState({copied: true})}>
-          <text className='link' style={{cursor:'pointer'}}>Copy link</text>
+          onCopy={() => this.setState({copyButtonText: 'Copied!'})}
+        >
+          <text className='link' style={{cursor:'pointer'}}>
+            {this.state.copyButtonText}
+          </text>
         </CopyToClipboard>
       );
     }

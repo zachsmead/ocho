@@ -62,17 +62,44 @@ a {
 .errorMessage-enter {
   opacity: 0;
 }
-
 .errorMessage-enter-active {
   opacity: 1;
   transition: opacity 500ms;
 }
-
 .errorMessage-exit {
   opacity: 1;
 }
-
 .errorMessage-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.loading-enter {
+  opacity: 0;
+}
+.loading-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.loading-exit {
+  opacity: 1;
+}
+.loading-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.copy-enter {
+  opacity: 0;
+}
+.copy-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.copy-exit {
+  opacity: 1;
+}
+.copy-exit-active {
   opacity: 0;
   transition: opacity 500ms;
 }
