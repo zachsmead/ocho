@@ -18,6 +18,7 @@ class Interface extends React.Component {
     error: '',
     showError: false,
     shortened: false,
+    loading: false,
     copied: false,
   };
 
@@ -81,6 +82,9 @@ class Interface extends React.Component {
   };
 
   createShortenedURL = async => {
+    // first, in case previously there was an error, we want to reset error to a blank string.
+    this.setState({ showError: false });
+
     // check the url protocol and add protocol if need be
     const url = this.state.url;
 
@@ -88,6 +92,8 @@ class Interface extends React.Component {
     const valid = this.validate(url);
 
     if (valid) {
+      this.setState({ loading: true })
+
       // add protocol ('http://' prefix) to the url first, if needed
       const urlWithProtocol = this.addProtocol(url);
 
@@ -113,7 +119,7 @@ class Interface extends React.Component {
             this.createShortenedURL();
           } else {
             firebase.firestore().collection('urls').doc(id).set(item).then(res => { // doc(id) creates a doc with id equal to the short random string. .set() sets that docs attributes.
-              this.setState({ url: short, shortened: true });
+              this.setState({ url: short, shortened: true, loading: false });
             });
           }
         })
@@ -124,6 +130,15 @@ class Interface extends React.Component {
   };
 
   renderCopyButton() {
+    if (this.state.loading) {
+      return (
+        <CopyToClipboard
+          text={this.state.url}>
+          <text style={{ color: 'grey' }}>Loading...</text>
+        </CopyToClipboard>
+      );
+    }
+
     if (this.state.shortened && this.state.copied) {
       return (
         <CopyToClipboard
