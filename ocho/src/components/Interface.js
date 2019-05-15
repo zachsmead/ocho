@@ -196,7 +196,8 @@ class Interface extends React.Component {
 
         </Row>
         <Row style={{ flex: 1 }}>
-          <Col md={{ size: 6, offset: 3 }} style={{ padding: 10 }}>
+          <Col md={{ size: 6, offset: 3 }} style={{marginTop: 'auto',
+marginBottom: 'auto'}}>
             <div>
               <form onSubmit={this.onFormSubmit}>
                 <input
@@ -209,8 +210,11 @@ class Interface extends React.Component {
               </form>
             </div>
           </Col>
-          <Col md="auto">
-            {this.renderCopyButton()}
+          <Col md="auto" style={{marginTop: 'auto',
+marginBottom: 'auto'}}>
+            <div>
+              {this.renderCopyButton()}
+            </div>
           </Col>
         </Row>
         <Row style={{ flex: 1, color: 'grey' }}>
