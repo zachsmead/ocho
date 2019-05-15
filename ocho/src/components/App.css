@@ -19,3 +19,15 @@
   font-size: 1em;
   color: grey;
 }
+
+.about-content {
+  font-size: 0.8em;
+  text-align: left;
+}
+.about-subcontent {
+  padding-bottom: 20px;
+}
+
+a:hover {
+  color: #238ddb;
+}

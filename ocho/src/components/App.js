@@ -105,38 +105,58 @@ class App extends React.Component {
             contentLabel="Example Modal"
             closeTimeoutMS={150}
           >
-          <Row style={{ flex: 2}}>
-            <Col md={{ size: 12 }} style={{ padding: 10 }}>
-              <text
-                class='about-header'
-              >
-                ocho
-              </text>
-            </Col>
-          </Row>
-          <Row style={{ flex: 1}}>
-            <Col md={{ size: 12 }}>
-              <text
-                class='about-subheader'
-              >
-                URLs in 8 characters or less.
-              </text>
-            </Col>
-          </Row>
-          <Row style={{ flex: 5}}>
-
-          </Row>
-          <Row style={{ flex: 1}}>
-            <Col md={{ size: 12 }} style={{ padding: 10 }}>
-              <text
-                class='about-link'
-                style={{cursor:'pointer'}}
-                onClick={() => this.closeModal()}
-              >
-                close
-              </text>
-            </Col>
-          </Row>
+            <Container>
+              <Row style={{ flex: 2}}>
+                <Col md={{ size: 12 }} style={{ padding: 10 }}>
+                  <text
+                    class='about-header'
+                  >
+                    ocho
+                  </text>
+                </Col>
+              </Row>
+              <Row style={{ flex: 1}}>
+                <Col md={{ size: 12 }}>
+                  <text
+                    class='about-subheader'
+                  >
+                    URLs in 8 characters or less.
+                  </text>
+                </Col>
+              </Row>
+              <Row style={{ flex: 5}}>
+                <Col md={{ size: 8, offset: 2 }}>
+                  <div class='about-content'>
+                    <text >
+                      <div class='about-subcontent'>
+                        This is a simple tool for turning long URLs into short ones that are easy to copy-paste.
+                        It's made with React and Firestore, and generates a random string to redirect to any given URL.
+                      </div>
+                      <div class='about-subcontent'>
+                        There are 62 characters to choose from when generating a random string.
+                        With 6 character slots, there are 56,800,235,584 (~57 billion) unique combinations.
+                        With 7 character slots, there are 3,521,614,600,000 (~3.5 trillion) combinations.
+                        With 8 slots, there are 218,340,110,000,000 (~220 trillion) combinations.
+                      </div>
+                      <div class='about-subcontent'>
+                        This site is owned and maintained by <a href='https://zachsmead.com'>Zach Smead</a>.
+                      </div>
+                    </text>
+                  </div>
+                </Col>
+              </Row>
+              <Row style={{ flex: 1}}>
+                <Col md={{ flex: 1, size: 12 }} style={{ padding: 10 }}>
+                  <text
+                    class='about-link'
+                    style={{cursor:'pointer'}}
+                    onClick={() => this.closeModal()}
+                  >
+                    close
+                  </text>
+                </Col>
+              </Row>
+            </Container>
           </Modal>
         </Container>
       );
