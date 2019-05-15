@@ -65,7 +65,7 @@ a {
 
 .errorMessage-enter-active {
   opacity: 1;
-  transition: opacity 300ms;
+  transition: opacity 500ms;
 }
 
 .errorMessage-exit {
@@ -74,5 +74,5 @@ a {
 
 .errorMessage-exit-active {
   opacity: 0;
-  transition: opacity 300ms;
+  transition: opacity 500ms;
 }

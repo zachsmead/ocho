@@ -38,6 +38,9 @@ class Interface extends React.Component {
 
   generateErrorMessage() {
     this.setState({ error: 'Sorry, that URL is invalid.', showError: true});
+    setTimeout(() => {
+      this.setState({ showError: false });
+    }, 1800 )
   }
 
   validate = url => {
@@ -113,7 +116,7 @@ class Interface extends React.Component {
             this.createShortenedURL();
           } else {
             firebase.firestore().collection('urls').doc(id).set(item).then(res => { // doc(id) creates a doc with id equal to the short random string. .set() sets that docs attributes.
-              this.setState({ url: short, error: '', shortened: true });
+              this.setState({ url: short, shortened: true });
             });
           }
         })
@@ -150,7 +153,7 @@ class Interface extends React.Component {
         <Col md="12">
           <CSSTransition
             in={this.state.showError}
-            timeout={300}
+            timeout={370}
             classNames="errorMessage"
             unmountOnExit
           >
@@ -180,7 +183,7 @@ class Interface extends React.Component {
                   type="text"
                   placeholder='Enter a URL'
                   value={this.state.url}
-                  onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false, showError: false })}
+                  onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false })}
                 />
               </form>
             </div>
