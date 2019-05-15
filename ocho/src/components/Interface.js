@@ -17,6 +17,7 @@ class Interface extends React.Component {
     urlWithProtocol: '',
     error: '',
     showError: false,
+    errorTimeoutId: 0, // the error message timeout ID that controls the automatic fadeout animation
     shortened: false,
     loading: false,
     copyButtonText: 'Copy',
@@ -24,6 +25,7 @@ class Interface extends React.Component {
 
   componentWillMount = () => {
     console.log(this.state);
+    this.state.errorTimeouts.forEach(t => clearTimeout(t));
   }
 
   addProtocol = url => {
@@ -38,16 +40,24 @@ class Interface extends React.Component {
   }
 
   errorTimeout() {
-    setTimeout(() => { // function which initiates the fade out of the error message
+    return (setTimeout(() => { // function which initiates the fade out of the error message
       this.setState({ showError: false });
-    }, 1800 )
+    }, 1800 ));
   }
 
   generateErrorMessage() {
     this.setState({ error: 'Sorry, that URL is invalid.', showError: true});
 
-    clearTimeout(this.errorTimeout); // clear previous calls of this function before running it again.
-    this.errorTimeout();
+    clearTimeout(this.state.errorTimeoutId) // clear the previous error timeout animation
+
+    this.state.errorTimeouts.push(setTimeout(() => { // function which initiates the fade out of the error message
+      this.setState({ showError: false });
+    }, 1800 ));
+    // this.state.errorTimeouts.push(this.errorTimeout);
+
+    console.log(this.state.errorTimeouts);
+
+    this.state.errorTimeouts[0]();
 
   }
 
