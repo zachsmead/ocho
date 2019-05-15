@@ -25,7 +25,6 @@ class Interface extends React.Component {
 
   componentWillMount = () => {
     console.log(this.state);
-    this.state.errorTimeouts.forEach(t => clearTimeout(t));
   }
 
   addProtocol = url => {
@@ -40,25 +39,23 @@ class Interface extends React.Component {
   }
 
   errorTimeout() {
-    return (setTimeout(() => { // function which initiates the fade out of the error message
-      this.setState({ showError: false });
-    }, 1800 ));
+    const errorTimeoutId = window.setTimeout(() => { // function which initiates the fade out of the error message
+      this.setState({ showError: false, errorTimeoutId });
+    }, 1800 );
+
+    return errorTimeoutId;
   }
 
   generateErrorMessage() {
     this.setState({ error: 'Sorry, that URL is invalid.', showError: true});
 
-    clearTimeout(this.state.errorTimeoutId) // clear the previous error timeout animation
+    clearTimeout(this.state.errorTimeoutId); // clear the previous error timeout animation
 
-    this.state.errorTimeouts.push(setTimeout(() => { // function which initiates the fade out of the error message
-      this.setState({ showError: false });
-    }, 1800 ));
-    // this.state.errorTimeouts.push(this.errorTimeout);
+    const newErrorTimeout = this.errorTimeout();
 
-    console.log(this.state.errorTimeouts);
+    this.setState({ errorTimeoutId: newErrorTimeout });
 
-    this.state.errorTimeouts[0]();
-
+    newErrorTimeout();
   }
 
   validate = url => {
