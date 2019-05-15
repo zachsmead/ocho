@@ -90,16 +90,15 @@ a {
 }
 
 .copy-enter {
-  opacity: 0;
+  opacity: 1;
 }
 .copy-enter-active {
   opacity: 1;
-  transition: opacity 500ms;
 }
 .copy-exit {
   opacity: 1;
 }
 .copy-exit-active {
   opacity: 0;
-  transition: opacity 500ms;
+  transition: opacity 300ms;
 }

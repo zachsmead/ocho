@@ -92,7 +92,7 @@ class Interface extends React.Component {
     const valid = this.validate(url);
 
     if (valid) {
-      this.setState({ loading: true })
+      this.setState({ loading: true, copyButtonText: 'Copy' })
 
       // add protocol ('http://' prefix) to the url first, if needed
       const urlWithProtocol = this.addProtocol(url);
@@ -139,8 +139,13 @@ class Interface extends React.Component {
       );
     }
 
-    if (this.state.shortened) {
-      return (
+    return (
+      <CSSTransition
+        in={this.state.shortened}
+        timeout={350}
+        classNames="copy"
+        unmountOnExit
+      >
         <CopyToClipboard
           text={this.state.url}
           onCopy={() => this.setState({copyButtonText: 'Copied!'})}
@@ -149,8 +154,8 @@ class Interface extends React.Component {
             {this.state.copyButtonText}
           </text>
         </CopyToClipboard>
-      );
-    }
+      </CSSTransition>
+    );
   }
 
   renderError() {
@@ -187,7 +192,7 @@ class Interface extends React.Component {
                   type="text"
                   placeholder='Enter a URL'
                   value={this.state.url}
-                  onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false })}
+                  onChange={e => this.setState({ url: e.target.value, shortened: false })}
                 />
               </form>
             </div>
