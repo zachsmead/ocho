@@ -137,7 +137,7 @@ class App extends React.Component {
                         That's a lot of options!
                         With 6 character slots, there are 56,800,235,584 (~57 billion) unique combinations.
                         With 7 character slots, there are 3,521,614,600,000 (~3.5 trillion) combinations.
-                        With 8 slots, there are 218,340,110,000,000 (~220 trillion) combinations.
+                        With 8 slots, there are 218,340,110,000,000 (~218 trillion) combinations.
                       </div>
                       <div class='about-subcontent'>
                         This site is owned and maintained by <a href='https://zachsmead.com'>Zach Smead</a>.

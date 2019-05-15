@@ -196,8 +196,12 @@ class Interface extends React.Component {
 
         </Row>
         <Row style={{ flex: 1 }}>
-          <Col md={{ size: 6, offset: 3 }} style={{marginTop: 'auto',
-marginBottom: 'auto'}}>
+          <Col
+            md={{ size: 6, offset: 3 }}
+            style={{ // vertical centering
+              marginTop: 'auto',
+              marginBottom: 'auto'
+            }}>
             <div>
               <form onSubmit={this.onFormSubmit}>
                 <input
@@ -210,9 +214,14 @@ marginBottom: 'auto'}}>
               </form>
             </div>
           </Col>
-          <Col md="auto" style={{marginTop: 'auto',
-marginBottom: 'auto'}}>
-            <div>
+          <Col
+            md="auto"
+            style={{ // vertical centering
+              marginTop: 'auto',
+              marginBottom: 'auto'
+            }}
+          >
+            <div style={{height: 32}}>
               {this.renderCopyButton()}
             </div>
           </Col>
