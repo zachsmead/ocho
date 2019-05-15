@@ -107,7 +107,7 @@ class App extends React.Component {
           >
             <Container fluid style={{width: '100%'}}>
               <Row style={{ flex: 2}}>
-                <Col md={{ size: 12 }} style={{ padding: 10 }}>
+                <Col md={{ size: 12 }}>
                   <text
                     class='about-header'
                   >
