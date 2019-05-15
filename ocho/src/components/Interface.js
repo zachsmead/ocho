@@ -54,8 +54,6 @@ class Interface extends React.Component {
     const newErrorTimeout = this.errorTimeout();
 
     this.setState({ errorTimeoutId: newErrorTimeout });
-
-    // newErrorTimeout();
   }
 
   validate = url => {

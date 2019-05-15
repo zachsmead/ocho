@@ -7,6 +7,7 @@ import { Container, Row, Col } from 'reactstrap';
 import Modal from 'react-modal';
 
 import Interface from './Interface';
+import  './App.css';
 
 Modal.setAppElement('#root')
 
@@ -104,9 +105,21 @@ class App extends React.Component {
             contentLabel="Example Modal"
             closeTimeoutMS={150}
           >
-            <h2 ref={subtitle => this.subtitle = subtitle}>ocho</h2>
-            <button onClick={() => this.closeModal()}>close</button>
-            <div>I am a modal</div>
+            <Row style={{ flex: 8}}>
+
+            </Row>
+
+          <Row style={{ flex: 1}}>
+            <Col md={{ size: 12 }} style={{ padding: 10 }}>
+              <text
+                class='about-link'
+                style={{cursor:'pointer'}}
+                onClick={() => this.closeModal()}
+              >
+                close
+              </text>
+            </Col>
+          </Row>
           </Modal>
         </Container>
       );
@@ -124,12 +137,13 @@ class App extends React.Component {
 
 const modalStyles = {
   content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    top: 'auto',
+    right: 'auto',
+    bottom: 'auto',
+    left: 'auto',
+    width: '100%',
+    height: '100%',
+    border: 'none'
   }
 };
 
