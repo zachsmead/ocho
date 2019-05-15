@@ -81,9 +81,6 @@ class Interface extends React.Component {
   };
 
   createShortenedURL = async => {
-    // first, in case previously there was an error, we want to reset error to a blank string.
-    this.setState({ error: '' });
-
     // check the url protocol and add protocol if need be
     const url = this.state.url;
 
@@ -148,22 +145,20 @@ class Interface extends React.Component {
   }
 
   renderError() {
-    // if (this.state.error) {
-      return (
-        <Col md="12">
-          <CSSTransition
-            in={this.state.showError}
-            timeout={370}
-            classNames="errorMessage"
-            unmountOnExit
-          >
-            <div>
-              {this.state.error}
-            </div>
-          </CSSTransition>
-        </Col>
-      )
-    // }
+    return (
+      <Col md="12">
+        <CSSTransition
+          in={this.state.showError}
+          timeout={370}
+          classNames="errorMessage"
+          unmountOnExit
+        >
+          <div>
+            {this.state.error}
+          </div>
+        </CSSTransition>
+      </Col>
+    )
   }
 
   render() {
