@@ -10,3 +10,12 @@
 .ReactModal__Overlay--before-close{
     opacity: 0;
 }
+
+.about-header {
+  font-size: 4em;
+}
+
+.about-subheader {
+  font-size: 1em;
+  color: grey;
+}

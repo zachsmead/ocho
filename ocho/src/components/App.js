@@ -105,10 +105,27 @@ class App extends React.Component {
             contentLabel="Example Modal"
             closeTimeoutMS={150}
           >
-            <Row style={{ flex: 8}}>
+          <Row style={{ flex: 2}}>
+            <Col md={{ size: 12 }} style={{ padding: 10 }}>
+              <text
+                class='about-header'
+              >
+                ocho
+              </text>
+            </Col>
+          </Row>
+          <Row style={{ flex: 1}}>
+            <Col md={{ size: 12 }}>
+              <text
+                class='about-subheader'
+              >
+                URLs in 8 characters or less.
+              </text>
+            </Col>
+          </Row>
+          <Row style={{ flex: 5}}>
 
-            </Row>
-
+          </Row>
           <Row style={{ flex: 1}}>
             <Col md={{ size: 12 }} style={{ padding: 10 }}>
               <text
