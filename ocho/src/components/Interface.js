@@ -16,7 +16,7 @@ class Interface extends React.Component {
     url: '',
     urlWithProtocol: '',
     error: '',
-    showError: '',
+    showError: false,
     shortened: false,
     copied: false,
   };
@@ -37,7 +37,7 @@ class Interface extends React.Component {
   }
 
   generateErrorMessage() {
-    this.setState({ error: 'Sorry, that URL is invalid.'});
+    this.setState({ error: 'Sorry, that URL is invalid.', showError: true});
   }
 
   validate = url => {
@@ -149,7 +149,7 @@ class Interface extends React.Component {
       return (
         <Col md="12">
           <CSSTransition
-            in={this.state.error}
+            in={this.state.showError}
             timeout={300}
             classNames="errorMessage"
             unmountOnExit
@@ -180,7 +180,7 @@ class Interface extends React.Component {
                   type="text"
                   placeholder='Enter a URL'
                   value={this.state.url}
-                  onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false, error: '' })}
+                  onChange={e => this.setState({ url: e.target.value, shortened: false, copied: false, showError: false })}
                 />
               </form>
             </div>
