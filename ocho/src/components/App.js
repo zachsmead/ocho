@@ -134,6 +134,7 @@ class App extends React.Component {
                       </div>
                       <div class='about-subcontent'>
                         There are 62 characters to choose from when generating a random string.
+                        That's a lot of options!
                         With 6 character slots, there are 56,800,235,584 (~57 billion) unique combinations.
                         With 7 character slots, there are 3,521,614,600,000 (~3.5 trillion) combinations.
                         With 8 slots, there are 218,340,110,000,000 (~220 trillion) combinations.
@@ -181,7 +182,8 @@ const modalStyles = {
     width: '100%',
     height: '100%',
     border: 'none',
-    padding: '0px'
+    padding: '0px',
+    backgroundColor: '#f7f7f7'
   }
 };
 
