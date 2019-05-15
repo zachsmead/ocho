@@ -37,11 +37,18 @@ class Interface extends React.Component {
     }
   }
 
-  generateErrorMessage() {
-    this.setState({ error: 'Sorry, that URL is invalid.', showError: true});
-    setTimeout(() => {
+  errorTimeout() {
+    setTimeout(() => { // function which initiates the fade out of the error message
       this.setState({ showError: false });
     }, 1800 )
+  }
+
+  generateErrorMessage() {
+    this.setState({ error: 'Sorry, that URL is invalid.', showError: true});
+
+    clearTimeout(this.errorTimeout); // clear previous calls of this function before running it again.
+    this.errorTimeout();
+
   }
 
   validate = url => {
