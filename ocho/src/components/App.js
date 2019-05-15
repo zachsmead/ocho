@@ -4,14 +4,20 @@ import firebaseConfig from 'config/firebaseConfig.js';
 import { BrowserRouter as Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'reactstrap';
+import Modal from 'react-modal';
+
 import Interface from './Interface';
+
+Modal.setAppElement('#root')
+
 
 class App extends React.Component {
   state = {
     loading: true,
     info: false,
     link: '',
-    url: ''
+    url: '',
+    modalIsOpen: false
   }
 
   componentWillMount() {
@@ -59,6 +65,14 @@ class App extends React.Component {
     }
   }
 
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
   renderContent() {
     if (!this.state.loading) {
       if (this.state.info) { // if info is in the URL bar, render a json with the original url and shortened link
@@ -74,9 +88,34 @@ class App extends React.Component {
           </Row>
           <Row style={{ flex: 1}}>
             <Col md={{ size: 12 }} style={{ padding: 10 }}>
-              <text class='about-link' style={{cursor:'pointer'}}>about this site</text>
+              <text
+                class='about-link'
+                style={{cursor:'pointer'}}
+                onClick={() => this.openModal()}
+              >
+                about this site
+              </text>
             </Col>
           </Row>
+          <Modal
+            isOpen={this.state.modalIsOpen}
+            onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+          >
+
+            <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
+            <button onClick={this.closeModal}>close</button>
+            <div>I am a modal</div>
+            <form>
+              <input />
+              <button>tab navigation</button>
+              <button>stays</button>
+              <button>inside</button>
+              <button>the modal</button>
+            </form>
+          </Modal>
         </Container>
       );
     }
@@ -90,5 +129,16 @@ class App extends React.Component {
     );
   }
 }
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
 
 export default App;
