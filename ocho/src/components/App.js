@@ -100,20 +100,13 @@ class App extends React.Component {
           <Modal
             isOpen={this.state.modalIsOpen}
             onRequestClose={() => this.closeModal()}
-            style={customStyles}
+            style={modalStyles}
             contentLabel="Example Modal"
+            closeTimeoutMS={150}
           >
-
-            <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
+            <h2 ref={subtitle => this.subtitle = subtitle}>ocho</h2>
             <button onClick={() => this.closeModal()}>close</button>
             <div>I am a modal</div>
-            <form>
-              <input />
-              <button>tab navigation</button>
-              <button>stays</button>
-              <button>inside</button>
-              <button>the modal</button>
-            </form>
           </Modal>
         </Container>
       );
@@ -129,7 +122,7 @@ class App extends React.Component {
   }
 }
 
-const customStyles = {
+const modalStyles = {
   content : {
     top                   : '50%',
     left                  : '50%',
