@@ -180,7 +180,8 @@ const modalStyles = {
     left: 'auto',
     width: '100%',
     height: '100%',
-    border: 'none'
+    border: 'none',
+    padding: '0px'
   }
 };
 
