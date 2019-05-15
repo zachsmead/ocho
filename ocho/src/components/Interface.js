@@ -19,7 +19,7 @@ class Interface extends React.Component {
     showError: false,
     shortened: false,
     loading: false,
-    copied: false,
+    copyButtonText: 'Copy',
   };
 
   componentWillMount = () => {
