@@ -129,7 +129,7 @@ class App extends React.Component {
                   <div class='about-content'>
                     <text >
                       <div class='about-subcontent'>
-                        This is a simple tool for turning long URLs into short ones that are easy to copy-paste.
+                        This is a simple tool for turning long URLs into shorter ones that are easy to copy-paste.
                         It's made with React and Firestore, and generates a random link to redirect to any given URL.
                       </div>
                       <div class='about-subcontent'>
