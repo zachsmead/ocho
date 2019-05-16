@@ -133,7 +133,7 @@ class App extends React.Component {
                         It's made with React and Firestore, and generates a random link to redirect to any given URL.
                       </div>
                       <div class='about-subcontent'>
-                        To view the URL of a link before visiting it, you can add 'info/' in front of the shortened URL id. For example,
+                        To view the URL of a link before visiting it, you can add 'info/' in front of the shortened URL's id. For example,
                         you can try visiting <a href='https://ocho.at/info/nEz4Hq'>ocho.at/info/nEz4Hq</a>.
                       </div>
                       <div class='about-subcontent'>
