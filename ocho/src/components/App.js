@@ -130,14 +130,11 @@ class App extends React.Component {
                     <text >
                       <div class='about-subcontent'>
                         This is a simple tool for turning long URLs into short ones that are easy to copy-paste.
-                        It's made with React and Firestore, and generates a random string to redirect to any given URL.
+                        It's made with React and Firestore, and generates a random link to redirect to any given URL.
                       </div>
                       <div class='about-subcontent'>
-                        There are 62 characters to choose from when generating a random string.
-                        That's a lot of options!
-                        With 6 character slots, there are 56,800,235,584 (~57 billion) unique combinations.
-                        With 7 character slots, there are 3,521,614,600,000 (~3.5 trillion) combinations.
-                        With 8 slots, there are 218,340,110,000,000 (~218 trillion) combinations.
+                        To view the URL of a link before visiting it, you can add 'info/' in front of the shortened URL id. For example,
+                        you can try visiting <a href='https://ocho.at/info/nEz4Hq'>ocho.at/info/nEz4Hq</a>.
                       </div>
                       <div class='about-subcontent'>
                         This site is owned and maintained by <a href='https://zachsmead.com'>Zach Smead</a>.

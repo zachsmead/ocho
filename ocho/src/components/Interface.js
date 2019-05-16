@@ -172,7 +172,12 @@ class Interface extends React.Component {
 
   renderError() {
     return (
-      <Col md="12">
+      <Col
+        md="12"
+        style={{ // vertical centering
+          marginTop: 42
+        }}
+      >
         <CSSTransition
           in={this.state.showError}
           timeout={370}
