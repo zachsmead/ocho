@@ -256,6 +256,12 @@ nav-brand:focus {
 	/* color: #333; */
 }
 
+.index-image {
+    max-width: 20px;
+    max-height: 20px;
+    opacity: 0.6;
+}
+
 .portrait {
 	width: 101%;
   max-width: 287px;
